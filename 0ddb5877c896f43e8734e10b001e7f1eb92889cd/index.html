@@ -8,6 +8,7 @@
     <title>郭姓惟琶祖譜</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./font/bootstrap-icons.css">
 
 </head>
 
@@ -50,6 +51,17 @@
             <h1>
                 郭姓惟琶渡臺始祖世襲表
             </h1>
+        </div>
+        <div class="zoom">
+            <div class="btn" id="zoomIn">
+                <i class="bi bi-zoom-in"></i>
+            </div>
+            <div class="btn" id="zoomOut">
+                <i class="bi bi-zoom-out"></i>
+            </div>
+            <div class="btn" id="zoomInt">
+                <i class="bi bi-recycle"></i>
+            </div>
         </div>
         <div class="tree" id="family">
             <ul>
@@ -243,71 +255,11 @@
     <script src="./js/main.js"></script>
 
     <script>
-     
 
-       
+
+
         $(function () {
-            
-            var offL = $(window).width() / 2 - 280
-            var offH = $(window).height()
-            //function Scrolldown() {
-                //var initLeft = $("#成器公").offset().left
-               // if ($("#成器公".length > 0)) {
-                 //   $(".tree-outter").scrollLeft(initLeft - offL)
-                  //  window.scrollTo(0, 0);
-               // }
-           // }
- 
-            //window.onload = Scrolldown;
-            function Scrolldown() {
-                $(".tree-outter").scrollLeft(2800)
-                $("html,body").animate({
-                    scrollTop: 0
 
-                }, 100);
-            }
-            Scrolldown()
-            
-            $('.person').each(function () {
-                var hasSpouse = $(this).siblings('.spouse')
-                if (hasSpouse.length == 0) {
-                    $(this).addClass('nospouse')
-                    if (!$(this).hasClass('spouse')) {
-                        $(this).parent('.treeli').addClass('nospouseli')
-                        $(this).siblings('ul').addClass('nospouseUl')
-                    }
-                }
-            });
-
-            $(".dropdown").hover(function () {
-                $(this).find('.dropdown-menu ').toggleClass('show')
-            })
-
-
-            $('.btn-circle ').on('click', function () {
-                var goTarget = $(this).attr('href')
-                var goTargetT = $(goTarget).offset().top
-                var goTargetL = $(goTarget).offset().left
-
-
-                setTimeout(function () {
-                    // $('html,body').stop().animate({
-                    //     scrollTop: goTargetT - 100,
-                    // }, 100)
-                    if ($(goTarget).visible(true)) {
-                        var treeTop = $(".tree-outter").scrollTop()
-                        $('html,body').scrollTop(offH)
-
-                        var treeLeft = $(".tree-outter").scrollLeft()
-                        $(".tree-outter").scrollLeft(treeLeft - offL)
-                    }
-
-                }, 600)
-
-
-
-
-            })
 
 
         })
