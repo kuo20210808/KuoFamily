@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+$primary: #878765 !default;
+$secondary: #dcceba !default;
+
+@import "./bootstrap";
+
+body,
+html {
+	background-color:#999;
+    font-family:'Noto Serif TC', serif;
+    letter-spacing: 1.4px;
+    width: 100%;
+    overflow-x: hidden;
+}
+body{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    &:after {
+        content: "Loading...";
+        position: absolute;
+        background:#fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 2000;
+    }
+}
+.loading{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    &:after {
+        content: "Loading...";
+        position: absolute;
+        background:#fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 1000;
+    }
+
+}
+
+body.finish{
+    width: 100%;
+    overflow-x: hidden;
+    height: auto;
+    &::after{
+        display: none;
+    }
+}
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 280px;
+    z-index: 200;
+    h5  a{
+        transition: all .3s;
+    }
+    h5 a:hover{
+        color: $primary;
+    letter-spacing: 3px;
+
+    }
+    
+}
+a{
+    text-decoration: none;
+}
+:target{
+    animation: target .5s 4 ;
+    animation-timing-function: ease-in, linear,linear, ease-out;
+}
+@keyframes target
+{
+  0% { opacity: .9; background-color: $primary;}
+  100% { opacity: 1; background-color: #fff; }
+}
+.nav-pills {
+    li{
+        padding: 1rem 0;
+    }
+    .nav-link{
+        border-radius: 0px;
+        transition: all .3s;
+    }
+}
+
+.nav-pills .nav-link:hover,.nav-pills .nav-link.active{
+    background-color: rgba($primary,0);
+    color: $primary;
+    letter-spacing: 3px;
+}
+.nav-pills .nav-link.active{
+    font-weight: 700;
+}
+.dropdown-menu {
+    &.show{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    padding: .5rem 1rem;
+}
+.dropdown-menu ul{
+    padding-top: 0 !important;
+    &::before {
+        content: '';
+        display: none;
+    }
+    
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.zoom{
+    position: fixed;
+    top: 0;
+    left: 280px;
+    z-index: 200;
+
+    & .btn{
+        border-radius: 0px;
+        width: 48px;
+        height: 48px;
+         font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0);
+
+    }
+}
+/*前言*/
+.title{
+    font-weight: 700;
+}
+.outter{
+    margin-left: 280px;
+    max-width: calc(100vw - 280px);
+    max-height: 100vh;
+}
+.verticle-text{
+    writing-mode: vertical-rl;
+    line-height: 1.7;
+    writing-mode: tb-rl;
+
+}
+/*樹狀*/
+.tree-outter{
+    margin-left: 280px;
+    width: calc(100vw - 280px);
+    overflow: auto;
+    // overflow: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+
+div.tree {
+	white-space: nowrap;
+	padding-bottom: 30px;
+}
+
+.tree ul {
+	padding-top: 20px;
+	position: relative;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li.treeli {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 25px 25px 0 25px;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li.treeli::before,
+.tree li.treeli::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: calc(50% + 1.5rem);
+	border-top: 1px solid #ccc;
+	width: calc(50% + 1.5rem);
+	height: 25px;
+}
+
+.tree li.treeli::after {
+	right: auto;
+	left: calc(50% - 1.5rem);
+	border-left: 1px solid #ccc;
+}
+
+.tree li.treeli:only-child {
+	padding-top: 0;
+    &::after,
+    &::before {
+        display: none;
+    }
+}
+
+.tree li.treeli:first-child::before,
+.tree li.treeli:last-child::after {
+	border: 0 none;
+}
+
+.tree li.treeli:last-child::before {
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+}
+
+.tree li.treeli:first-child::after {
+	border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: calc(50% - 0.5rem);
+	border-left: 1px solid #ccc;
+	width: 0;
+	height: 20px;
+}
+
+.tree li.treeli>ul {
+    left: -1rem;
+}
+
+.person.dropdown{
+  cursor: pointer;
+}
+.person{
+	display: inline-block;
+    margin-right: 3rem;
+    
+    span{
+      display: inline-block;
+      background-color: #FFF;
+      padding: 1rem 0.5rem;
+      font-size: 18px;
+      letter-spacing: 2px;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+      writing-mode: vertical-lr;
+      //lr和rl會影響scroll anchor
+      line-height: 2rem;
+      min-height: 112px;
+      vertical-align: middle;
+    }
+}
+
+.spouse{
+  position: absolute;
+  transform: translateX(-2rem);
+}
+
+.spouse span:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform:translatex(-100%);
+    border-top: 1px solid #ccc;
+    width: calc(0px + 1rem);
+}
+.person:not(.spouse).nospouse{
+    margin-right: .5rem;
+}
+.tree li.nospouseli::after {
+    right: auto;
+    left: calc(50% - .5rem);
+    width: calc(50% + 2rem);
+}
+.tree li.nospouseli::before{
+    width: calc(50% + 3rem);
+    right: calc(50% + 0px);
+}
+.tree .nospouseUl::before {
+	left: calc(50% + 0.5rem)!important;
+}
+.nospouseUl{
+    z-index: 0;
+}

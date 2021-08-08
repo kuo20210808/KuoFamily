@@ -11341,12 +11341,63 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+body:after {
+  content: "Loading...";
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 2000;
+}
+
+.loading {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.loading:after {
+  content: "Loading...";
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1000;
+}
+
+body.finish {
+  width: 100%;
+  overflow-x: hidden;
+  height: auto;
+}
+
+body.finish::after {
+  display: none;
+}
+
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
   width: 280px;
+  z-index: 200;
 }
 
 .sidebar h5 a, .sidebar .h5 a {
