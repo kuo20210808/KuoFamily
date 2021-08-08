@@ -244,16 +244,24 @@
 
         $(function () {
 
-            function Scrolldown() {
-                var initLeft = $("#成器公").offset().left
-                if ($("#成器公".length > 0)) {
-                    $(".tree-outter").scrollLeft(initLeft - offL)
-                    window.scrollTo(0, 0);
-                }
-            }
- $("html,body").animate({ scrollTop: 0 }, 100);
+            //function Scrolldown() {
+                //var initLeft = $("#成器公").offset().left
+               // if ($("#成器公".length > 0)) {
+                 //   $(".tree-outter").scrollLeft(initLeft - offL)
+                  //  window.scrollTo(0, 0);
+               // }
+           // }
+ 
             //window.onload = Scrolldown;
-           
+           function Scrolldown() {
+                var initLeft = $("#成器公").offset().left
+                $("html,body").animate({
+                    scrollTop: 0, scrollleft: initLeft - offL
+
+                }, 100);
+            }
+            Scrolldown()
+            
             $('.person').each(function () {
                 var hasSpouse = $(this).siblings('.spouse')
                 if (hasSpouse.length == 0) {
