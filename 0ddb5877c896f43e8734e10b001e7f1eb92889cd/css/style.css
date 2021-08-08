@@ -11349,6 +11349,16 @@ html {
   width: 280px;
 }
 
+.sidebar h5 a, .sidebar .h5 a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.sidebar h5 a:hover, .sidebar .h5 a:hover {
+  color: #878765;
+  letter-spacing: 3px;
+}
+
 a {
   text-decoration: none;
 }
@@ -11389,10 +11399,18 @@ a {
 
 .nav-pills .nav-link {
   border-radius: 0px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.nav-pills .nav-link:hover {
-  background-color: rgba(135, 135, 101, 0.3);
+.nav-pills .nav-link:hover, .nav-pills .nav-link.active {
+  background-color: rgba(135, 135, 101, 0);
+  color: #878765;
+  letter-spacing: 3px;
+}
+
+.nav-pills .nav-link.active {
+  font-weight: 700;
 }
 
 .dropdown-menu {
@@ -11437,6 +11455,32 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.zoom {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  z-index: 200;
+}
+
+.zoom .btn {
+  border-radius: 0px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /*前言*/
@@ -11605,5 +11649,9 @@ div.tree {
 
 .tree .nospouseUl::before {
   left: calc(50% + 0.5rem) !important;
+}
+
+.nospouseUl {
+  z-index: 0;
 }
 /*# sourceMappingURL=style.css.map */
