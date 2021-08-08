@@ -253,9 +253,7 @@
             }
 
             window.onload = Scrolldown;
-            window.onbeforeunload = function () {
-             Scrolldown()
-            }
+           
             $('.person').each(function () {
                 var hasSpouse = $(this).siblings('.spouse')
                 if (hasSpouse.length == 0) {
