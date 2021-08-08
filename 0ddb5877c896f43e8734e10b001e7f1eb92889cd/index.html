@@ -241,7 +241,14 @@
         var offL = $(window).width() / 2 - 280
         var offH = $(window).height()
 
+            function Scrolldown() {
+                var initLeft = $("#成器公").offset().left
+                $("html,body").animate({
+                    scrollTop: 0, scrollleft: initLeft - offL
 
+                }, 100);
+            }
+            Scrolldown()
         $(function () {
 
             //function Scrolldown() {
@@ -253,14 +260,7 @@
            // }
  
             //window.onload = Scrolldown;
-           function Scrolldown() {
-                var initLeft = $("#成器公").offset().left
-                $("html,body").animate({
-                    scrollTop: 0, scrollleft: initLeft - offL
-
-                }, 100);
-            }
-            Scrolldown()
+          
             
             $('.person').each(function () {
                 var hasSpouse = $(this).siblings('.spouse')
