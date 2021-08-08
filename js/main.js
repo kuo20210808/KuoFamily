@@ -1,5 +1,9 @@
+
 $(function () {
 
+    setTimeout(function () {
+        $('body').addClass('finish')
+    }, 1000)
     var offL = $(window).width() / 2 - 280
     var offH = $(window).height()
 
