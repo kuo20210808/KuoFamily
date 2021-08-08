@@ -11439,6 +11439,26 @@ a {
           align-items: center;
 }
 
+/*前言*/
+.title {
+  font-weight: 700;
+}
+
+.outter {
+  margin-left: 280px;
+  max-width: calc(100vw - 280px);
+  max-height: 100vh;
+}
+
+.verticle-text {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  line-height: 1.7;
+  -webkit-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+}
+
 /*樹狀*/
 .tree-outter {
   margin-left: 280px;
@@ -11543,9 +11563,9 @@ div.tree {
   letter-spacing: 2px;
   -webkit-box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
   line-height: 2rem;
   min-height: 112px;
   vertical-align: middle;
