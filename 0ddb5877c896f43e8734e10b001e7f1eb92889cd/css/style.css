@@ -11364,7 +11364,6 @@ a {
 }
 
 :target {
-  font-weight: 700;
   -webkit-animation: target .5s 4;
           animation: target .5s 4;
   -webkit-animation-timing-function: ease-in, linear,linear, ease-out;
