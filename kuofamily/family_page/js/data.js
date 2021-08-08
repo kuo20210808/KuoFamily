@@ -102,7 +102,20 @@ $(function () {
     window.four1_2 = window.four1_2 || {};
     window.four1_2.data = { name: "為忠", info: 0, spouse: 0, children: 0 };
     window.four1_3 = window.four1_3 || {};
-    window.four1_3.data = { name: "為信", info: 0, spouse: 0, children: [five4_10.data, five4_9.data, five4_8.data, five4_7.data, five4_6.data, five4_5.data, five4_4.data, five4_3.data, five4_2.data, five4_1.data,] };
+    window.four1_3.data = {
+        name: "郭添信", info: 1, spouse: "郭張春", children: [five4_10.data, five4_9.data, five4_8.data, five4_7.data, five4_6.data, five4_5.data, five4_4.data, five4_3.data, five4_2.data, five4_1.data,], infoData:
+            `     <h5>四世 為信公</h5>
+            <ul>
+                <li>郭寶玉第三子。</li>
+                <li>元配林氏。 再娶郭張春</li>
+            </ul>                  
+            <br>
+            <div>名片</div>
+            
+            <img src="./img/郭玉記1930_01_03.jpg" alt="" class="img-fluid">
+
+            `
+    };
     window.four1_4 = window.four1_4 || {};
     window.four1_4.data = { name: "為智", info: 0, spouse: 0, children: 0 };
 
