@@ -251,8 +251,8 @@
                     window.scrollTo(0, 0);
                 }
             }
-
-            window.onload = Scrolldown;
+ $("html,body").animate({ scrollTop: 0 }, 100);
+            //window.onload = Scrolldown;
            
             $('.person').each(function () {
                 var hasSpouse = $(this).siblings('.spouse')
