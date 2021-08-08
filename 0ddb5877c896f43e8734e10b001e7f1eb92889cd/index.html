@@ -242,6 +242,7 @@
 
        
         $(function () {
+            
             var offL = $(window).width() / 2 - 280
             var offH = $(window).height()
             //function Scrolldown() {
@@ -273,7 +274,9 @@
                 }
             });
 
-
+            $(".dropdown").hover(function () {
+                $(this).find('.dropdown-menu ').toggleClass('show')
+            })
 
 
             $('.btn-circle ').on('click', function () {
