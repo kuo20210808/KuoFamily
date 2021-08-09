@@ -149,11 +149,12 @@ a{
    
     .sidebar{
         overflow: auto;
+        overflow-x: hidden;
         width: 60px;
     }
     .btn-circle {
-        width: 48px;
-        height: 48px;
+        width: 35x;
+        height: 35x;
         border-radius: 25px;
         margin-top: 6px;
     }
