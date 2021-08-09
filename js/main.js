@@ -2,19 +2,24 @@
 $(function () {
 
     setTimeout(function () {
-        $('body').addClass('finish')
-    }, 1000)
-    var offL = $(window).width() / 2 - 280
-    var offH = $(window).height()
+        $('body').removeClass('loading')
+        ScrollCenter()
+    }, 2000)
 
-    function Scrolldown() {
-        $(".tree-outter").scrollLeft(2800)
+
+    var offL = $(window).width() / 2
+    var offH = $(window).height() / 2
+
+    function ScrollCenter() {
+        var centerL = $("#成器公").offset().left
+        // $(".tree-outter").scrollLeft(2800)
         $("html,body").animate({
+            scrollLeft: Math.abs(centerL - offL),
             scrollTop: 0
+        })
 
-        }, 100);
     }
-    Scrolldown()
+    ScrollCenter()
 
 
     //沒配偶的加nospouse微調樣式
@@ -33,27 +38,27 @@ $(function () {
     $(".dropdown").hover(function () {
         $(this).find('.dropdown-menu').toggleClass('show')
     })
-    //scroll anchor 再調整
-    $('.btn-circle').on('click', function () {
-        var goTarget = $(this).attr('href')
+
+    //scroll anchor 
+    $('.btn-circle').on('click', function (event) {
+        event.preventDefault()
+        var goTarget = $(this).attr('data-href')
+        $(goTarget).removeClass('target')
+
         var goTargetT = $(goTarget).offset().top
         var goTargetL = $(goTarget).offset().left
-        setTimeout(function () {
-            // $('html,body').stop().animate({
-            //     scrollTop: goTargetT - 100,
-            // }, 100)
-            if ($(goTarget).visible(true)) {
-                var treeTop = $(".tree-outter").scrollTop()
-                $('html,body').scrollTop(offH)
+        $("html,body").scrollLeft(Math.abs(goTargetL - offL))
+        $("html,body").scrollTop(800)
+        $(goTarget).addClass('target')
 
-                var treeLeft = $(".tree-outter").scrollLeft()
-                $(".tree-outter").scrollLeft(treeLeft - offL)
-            }
+        // var goTargetL = $('#郭振壽').offset().left
+        // var offL = $(window).width() / 2
+        // $("html,body").scrollLeft(Math.abs(goTargetL - offL) )
+        // $("html,body").scrollTop(800)
 
-        }, 600)
+
 
     })
-
     //zoom
     var zoom = 1;
     $('#zoomIn').on('click', function () {
@@ -63,17 +68,20 @@ $(function () {
     $('#zoomInt').on('click', function () {
         zoom = 1;
         $('#family').css('zoom', zoom);
-        Scrolldown()
+        ScrollCenter()
 
     });
     $('#zoomOut').on('click', function () {
         zoom -= 0.1;
         $('#family').css('zoom', zoom);
     });
-
+    $("#sidebarLeftBtn").click(function () {
+        $("body").toggleClass('sidebarLeft')
+    });
     //load() html
     $("#preface").click(function () {
         $("#tree-outter").addClass('d-none')
+        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
         $("#wrapper").removeClass('d-none')
         $("#wrapper").load('./preface.html');
         $('this').addClass('active')
@@ -81,21 +89,23 @@ $(function () {
     });
     $("#death").click(function () {
         $("#tree-outter").addClass('d-none')
+        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
         $("#wrapper").removeClass('d-none')
         $("#wrapper").load('./death.html');
         $('this').addClass('active')
     });
     $("#event").click(function () {
         $("#tree-outter").addClass('d-none')
+        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
         $("#wrapper").removeClass('d-none')
-
         $("#wrapper").load('./event.html');
         $('this').addClass('active')
     });
     $("#tree").click(function () {
         $("#tree-outter").removeClass('d-none')
+        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').removeClass('d-none')
         $("#wrapper").addClass('d-none')
-        Scrolldown()
+        ScrollCenter()
 
     });
 
