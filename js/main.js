@@ -39,6 +39,10 @@ $(function () {
         $(this).find('.dropdown-menu').toggleClass('show')
     })
 
+
+
+
+
     //scroll anchor 
     $('.btn-circle').on('click', function (event) {
         event.preventDefault()
@@ -51,6 +55,11 @@ $(function () {
         $("html,body").scrollTop(800)
         $(goTarget).addClass('target')
 
+        //如果一直放大 那按.btn-circle會找不到人 所以太放大按.btn-circle就回到一般大小
+        if ($('#family').css('zoom') > 1.2) {
+            $('#family').css('zoom', 1);
+        }
+
         // var goTargetL = $('#郭振壽').offset().left
         // var offL = $(window).width() / 2
         // $("html,body").scrollLeft(Math.abs(goTargetL - offL) )
@@ -59,6 +68,7 @@ $(function () {
 
 
     })
+
     //zoom
     var zoom = 1;
     $('#zoomIn').on('click', function () {
@@ -78,6 +88,7 @@ $(function () {
     $("#sidebarLeftBtn").click(function () {
         $("body").toggleClass('sidebarLeft')
     });
+
     //load() html
     $("#preface").click(function () {
         $("#tree-outter").addClass('d-none')
