@@ -97,6 +97,7 @@ a{
     font-weight: 700;
 }
 .dropdown-menu {
+    cursor: auto !important;
     &.show{
         display: flex;
         flex-direction: column;
@@ -195,6 +196,7 @@ body.sidebarLeft{
   body.sidebarLeft .tree-outter,body.sidebarLeft .outter{
     margin-left: 0;
     width: 100%!important;
+    max-width: 100%!important;
     overflow: initial!important;
     /*按下zoomInt記得.tree-outter要加overflow-auto的class*/
   }
@@ -212,6 +214,7 @@ body.sidebarLeft{
     margin-left: 280px;
     max-width: calc(100vw - 280px);
     max-height: 100vh;
+    cursor: auto !important;
 }
 .verticle-text{
     writing-mode: vertical-rl;

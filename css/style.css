@@ -11453,6 +11453,7 @@ a {
 }
 
 .dropdown-menu {
+  cursor: auto !important;
   padding: .5rem 1rem;
 }
 
@@ -11575,6 +11576,7 @@ body.sidebarLeft .sidebar {
 body.sidebarLeft .tree-outter, body.sidebarLeft .outter {
   margin-left: 0;
   width: 100% !important;
+  max-width: 100% !important;
   overflow: initial !important;
   /*按下zoomInt記得.tree-outter要加overflow-auto的class*/
 }
@@ -11596,6 +11598,7 @@ body.sidebarLeft .verticle-text {
   margin-left: 280px;
   max-width: calc(100vw - 280px);
   max-height: 100vh;
+  cursor: auto !important;
 }
 
 .verticle-text {
