@@ -11520,6 +11520,13 @@ a {
   border: 1px solid #fff;
   color: #fff;
   background-color: rgba(153, 153, 153, 0.7);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.zoom .btn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #878765;
 }
 
 @media (max-width: 992px) {
@@ -11608,6 +11615,21 @@ body.sidebarLeft .verticle-text {
   line-height: 1.7;
   -webkit-writing-mode: tb-rl;
           writing-mode: tb-rl;
+}
+
+.card {
+  opacity: 0.7;
+  border-radius: 0px !important;
+}
+
+.modal-header .btn {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer !important;
+}
+
+.modal-header .btn:hover {
+  color: #878765;
 }
 
 /*樹狀*/
