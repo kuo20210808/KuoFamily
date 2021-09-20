@@ -88,6 +88,31 @@ $(function () {
     $("#sidebarLeftBtn").click(function () {
         $("body").toggleClass('sidebarLeft')
     });
+    $("#fullScreenBtn").click(function () {
+        $("body").toggleClass('sidebarLeft')
+    });
+
+    FullScreenHelper.on(function () {
+        if (FullScreenHelper.state()) {
+            $("#fullScreenBtn").addClass('d-none')
+            $("#endBtn").removeClass('d-none')
+            $("#sidebarLeftBtn").addClass('d-none')
+            $("body").addClass('sidebarLeft')
+        } else {
+
+            $("#fullScreenBtn").removeClass('d-none')
+            $("#endBtn").addClass('d-none')
+            $("#sidebarLeftBtn").removeClass('d-none')
+            $("body").removeClass('sidebarLeft')
+
+        }
+    });
+
+
+
+
+
+
 
     //load() html
     $("#preface").click(function () {
@@ -119,6 +144,8 @@ $(function () {
         ScrollCenter()
 
     });
+
+
 
 
 });
