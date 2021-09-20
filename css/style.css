@@ -11640,6 +11640,10 @@ body.sidebarLeft .verticle-text {
   white-space: nowrap;
 }
 
+.tree-outter .verticle-text h1, .tree-outter .verticle-text .h1 {
+  background-color: rgba(153, 153, 153, 0.4);
+}
+
 div.tree {
   white-space: nowrap;
   padding-bottom: 30px;

@@ -56,6 +56,7 @@ body.finish{
         transition: all .3s;
         padding: 1.5rem 0;
         display: block;
+        
     }
     h5 a:hover{
         color: $primary;
@@ -246,6 +247,9 @@ body.sidebarLeft{
     // overflow: auto;
     scroll-behavior: smooth;
     white-space: nowrap;
+    & .verticle-text h1{
+        background-color: rgba(153,153,153,.4);
+    }
 }
 
 
