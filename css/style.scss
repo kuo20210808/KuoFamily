@@ -385,3 +385,25 @@ div.tree {
 .nospouseUl{
     z-index: 0;
 }
+
+
+.customTable{
+    tbody{
+        display: flex
+    }
+    tr{
+        display: flex;
+        margin-bottom: 1rem;
+        flex-direction: column;
+        th{
+            color: #fff;
+            text-align: center;
+        }
+        td{
+        }
+    }
+    writing-mode: vertical-rl;
+    writing-mode: tb-rl;
+    white-space: nowrap;
+    width: auto;
+}

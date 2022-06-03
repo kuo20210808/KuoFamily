@@ -11786,4 +11786,36 @@ div.tree {
 .nospouseUl {
   z-index: 0;
 }
+
+.customTable {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  white-space: nowrap;
+  width: auto;
+}
+
+.customTable tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.customTable tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.customTable tr th {
+  color: #fff;
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
