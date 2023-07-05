@@ -33,7 +33,7 @@ $(function () {
     window.six1_1 = window.six1_1 || {};
     window.six1_1.data = { name: "郭育均", info: 1, spouse: 0, children: 0, infoData: `<h5>六世</h5>` };
     window.six1_2 = window.six1_2 || {};
-    window.six1_2.data = { name: "郭承棟", info: 1, spouse: "吳秀英", children: [seven1_2.data, seven1_1.data], infoData: `<h5><img width="70px" src="./img/郭承棟.png" alt="" class="img-fluid">六世</h5> <h6>台南 玉記</h6>生於1963年5月8日<br>  `, SPinfo: 1, SPinfoData: `生於1965年7月15日<br>`, };
+    window.six1_2.data = { name: "郭承棟", info: 1, spouse: "吳秀英", children: [seven1_2.data, seven1_1.data], infoData: `<h5><img width="70px" src="./img/郭承棟.png" alt="郭承棟" class="img-fluid">六世</h5> <h6>台南 玉記</h6>生於1963年5月8日<br>  `, SPinfo: 1, SPinfoData: `生於1965年7月15日<br>`, };
     window.six3_1 = window.six3_1 || {};
     window.six3_1.data = { name: "郭懿嬋", info: 1, spouse: 0, children: 0, infoData: `<h5>六世</h5>` };
     window.six3_2 = window.six3_2 || {};
@@ -77,7 +77,7 @@ $(function () {
 
     //五世
     window.five4_1 = window.five4_1 || {};
-    window.five4_1.data = { name: "郭振益", info: 1, spouse: "郭王錦梅", children: [six1_2.data, six1_1.data], infoData: `<h5>五世<img width="70px" src="./img/郭振益.png" alt="" class="img-fluid"></h5> <h6>台南 玉記</h6>生於XXX年X月<br>卒於2017年8月10日 `, SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭王錦梅.png" alt="" class="img-fluid"><br>生於1935年5月<br>卒於2023年1月2日 `, };
+    window.five4_1.data = { name: "郭振益", info: 1, spouse: "郭王錦梅", children: [six1_2.data, six1_1.data], infoData: `<h5><img width="70px" src="./img/郭振益.png" alt="郭振益" class="img-fluid">五世</h5> <h6>台南 玉記</h6>生於XXX年X月<br>卒於2017年8月10日 `, SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭王錦梅.png" alt="郭王錦梅" class="img-fluid"><br>生於1935年5月<br>卒於2023年1月2日 `, };
     window.five4_2 = window.five4_2 || {};
     window.five4_2.data = { name: "郭月裡", info: 1, spouse: 0, children: 0, infoData: `<h5>五世</h5>` };
     window.five4_3 = window.five4_3 || {};
@@ -105,7 +105,7 @@ $(function () {
     window.four1_3 = window.four1_3 || {};
     window.four1_3.data = {
         name: "郭添信", info: 1, spouse: "郭張春", children: [five4_10.data, five4_9.data, five4_8.data, five4_7.data, five4_6.data, five4_5.data, five4_4.data, five4_3.data, five4_2.data, five4_1.data,], infoData:
-            `     <h5>四世 為信公</h5>
+            `     <h5><img width="70px" src="./img/添信.png" alt="郭添信" class="img-fluid">四世 為信公</h5>
             <ul>
                 <li>郭寶玉第三子。</li>
                 <li>元配林氏。 再娶郭張春</li>
@@ -115,7 +115,8 @@ $(function () {
             
             <img src="./img/郭玉記1930_01_03.jpg" alt="" class="img-fluid">
 
-            `
+            `,
+        SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭張春.png" alt="郭張春" class="img-fluid"><br>生於1935年5月<br>卒於2023年1月2日 `,
     };
     window.four1_4 = window.four1_4 || {};
     window.four1_4.data = { name: "為智", info: 0, spouse: 0, children: 0 };
@@ -180,7 +181,7 @@ $(function () {
         data: {
             零世: [
                 {
-                    name: "成器公", info: 1, spouse: 0, infoData: "福建省人", infoImg: 0,
+                    name: "成器公", info: 1, spouse: 0, infoData: "福建省人",
                     //一世
                     children: [
                         {
@@ -199,7 +200,7 @@ $(function () {
 
             配偶: [
                 {
-                    name: "成器公", info: 1, infoData: "福建省人", infoImg: 0,
+                    name: "成器公", info: 1, infoData: "福建省人",
                     //一世
                     children: [
                         {
