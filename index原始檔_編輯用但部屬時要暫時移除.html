@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭姓惟琶祖譜</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./font/bootstrap-icons.css">
+    <style>
+        .loading {
+            position: fixed;
+            width: 100%;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .loading :after {
+            content: "Loading...";
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            z-index: 1001;
+        }
+    </style>
+</head>
+
+<body class="loading">
+    <main>
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-xl-3 bg-light">
+            <h5 class="fs-4 text-center"> <a id="tree" class="link-dark">
+                    郭家家譜</a></h5>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto text-center">
+                <li>
+                    <a class="nav-link link-dark" id="preface">
+                        譜之前言
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link link-dark" id="birth_death">
+                        祖先忌辰月曆表
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link link-dark" id="event">
+                        歷代大事年表
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link link-dark" id="columbarium">
+                        金斗位置圖
+                    </a>
+                </li>
+            </ul>
+            <div id="grandPa" class="row justify-content-center">
+                <a data-href="#郭振益" class="btn btn-primary btn-circle link-light mx-1">益</a>
+                <a data-href="#郭振木" class="btn btn-primary btn-circle link-light mx-1">木</a>
+                <a data-href="#郭振福" class="btn btn-primary btn-circle link-light mx-1">福</a>
+                <a data-href="#郭振良" class="btn btn-primary btn-circle link-light mx-1">良</a>
+                <a data-href="#郭振吉" class="btn btn-primary btn-circle link-light mx-1">吉</a>
+                <a data-href="#郭振壽" class="btn btn-primary btn-circle link-light mx-1">壽</a>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="zoom">
+            <div class="btn" id="zoomIn">
+                <i class="bi bi-zoom-in"></i>
+            </div>
+            <div class="btn" id="zoomOut">
+                <i class="bi bi-zoom-out"></i>
+            </div>
+            <div class="btn" id="zoomInt">
+                <i class="bi bi-recycle"></i>
+            </div>
+            <div class="btn" id="sidebarLeftBtn">
+                <i class="bi bi-arrow-left-short"></i>
+            </div>
+            <div class="btn" data-bs-toggle="modal" data-bs-target="#webInfo">
+                <i class="bi bi-question-diamond"></i>
+            </div>
+            <div class="btn" id="fullScreenBtn" onclick="FullScreenHelper.request(document);">
+                <i class="bi bi-arrows-fullscreen"></i>
+            </div>
+            <div class="btn d-none h-100" id="endBtn" onclick="FullScreenHelper.exit();" style="font-size: 14px;">
+                結束全螢幕
+            </div>
+        </div>
+        <div id="wrapper"></div>
+
+        <div class="tree-outter" style="padding-bottom: 120px" id="tree-outter">
+            <div class="verticle-text py-5 position-fixed" style="right: 0px; z-index: 100;">
+                <h1>
+                    郭姓惟琶渡臺始祖世襲表
+                </h1>
+            </div>
+
+            <div class="tree" id="family">
+                <ul>
+                    <li class="treeli" v-for="human0 in 零世">
+                        <div class="person" v-bind:class="{dropdown:human0.info}">
+                            <span data-bs-toggle="dropdown" v-bind:id="human0.name">
+                                {{human0.name}}
+                            </span>
+                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human0.name"
+                                v-if="human0.info!=false">
+                                <div v-html="human0.infoData"></div> <img v-if="human0.infoImg!=false"
+                                    v-bind:src="human0.infoImg" class="img-fluid" width="100px">
+                            </div>
+                        </div>
+                        <div class="person spouse" v-if="human0.spouse!=false">
+                            <span>
+                                {{human0.spouse}}
+                            </span>
+                        </div>
+                        <ul v-if="human0.children!=false">
+                            <li class="treeli" v-for="human1 in human0.children">
+                                <div class="person" v-bind:class="{dropdown:human1.info}">
+                                    <span data-bs-toggle="dropdown" v-bind:id="human1.name">
+                                        {{human1.name}}
+                                    </span>
+                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human1.name"
+                                        v-if="human1.info!=false">
+                                        <div v-html="human1.infoData"></div> <img v-if="human1.infoImg!=false"
+                                            v-bind:src="human1.infoImg" class="img-fluid" width="100px">
+                                    </div>
+                                </div>
+                                <div class="person spouse" v-if="human1.spouse!=false">
+                                    <span>
+                                        {{human1.spouse}}
+                                    </span>
+                                </div>
+                                <ul v-if="human1.children!=false">
+                                    <li class="treeli" v-for="human2 in human1.children">
+                                        <div class="person" v-bind:class="{dropdown:human2.info}">
+                                            <span data-bs-toggle="dropdown" v-bind:id="human2.name">
+                                                {{human2.name}}
+                                            </span>
+                                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human2.name"
+                                                v-if="human2.info!=false">
+                                                <div v-html="human2.infoData"></div> <img v-if="human2.infoImg!=false"
+                                                    v-bind:src="human2.infoImg" class="img-fluid" width="100px">
+                                            </div>
+                                        </div>
+                                        <div class="person spouse" v-if="human1.spouse!=false">
+                                            <span>
+                                                {{human2.spouse}}
+                                            </span>
+                                        </div>
+                                        <ul v-if="human2.children!=false">
+                                            <li class="treeli" v-for="human3 in human2.children">
+                                                <div class="person" v-bind:class="{dropdown:human3.info}">
+                                                    <span data-bs-toggle="dropdown" v-bind:id="human3.name">
+                                                        {{human3.name}}
+                                                    </span>
+                                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human3.name"
+                                                        v-if="human3.info!=false">
+                                                        <div v-html="human3.infoData"></div> <img
+                                                            v-if="human3.infoImg!=false" v-bind:src="human3.infoImg"
+                                                            class="img-fluid" width="100px">
+                                                    </div>
+                                                </div>
+                                                <div class="person spouse" v-if="human3.spouse!=false">
+                                                    <span>
+                                                        {{human3.spouse}}
+                                                    </span>
+                                                </div>
+                                                <!-- 四世 -->
+                                                <ul v-if="human3.children!=false">
+                                                    <li class="treeli" v-for="human4 in human3.children">
+                                                        <div class="person" v-bind:class="{dropdown:human4.info}">
+                                                            <span data-bs-toggle="dropdown" v-bind:id="human4.name">
+                                                                {{human4.name}}
+                                                            </span>
+                                                            <div class="dropdown-menu px-3"
+                                                                v-bind:aria-labelledby="human4.name"
+                                                                v-if="human4.info!=false">
+                                                                <div v-html="human4.infoData"></div> <img
+                                                                    v-if="human4.infoImg!=false"
+                                                                    v-bind:src="human4.infoImg" class="img-fluid"
+                                                                    width="100px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="person spouse" v-if="human4.spouse!=false">
+                                                            <span>
+                                                                {{human4.spouse}}
+                                                            </span>
+                                                        </div>
+                                                        <!-- 五世 -->
+                                                        <ul v-if="human4.children!=false">
+                                                            <li class="treeli" v-for="human5 in human4.children">
+                                                                <div class="person"
+                                                                    v-bind:class="{dropdown:human5.info}">
+                                                                    <span data-bs-toggle="dropdown"
+                                                                        v-bind:id="human5.name">
+                                                                        {{human5.name}}
+                                                                    </span>
+                                                                    <div class="dropdown-menu px-3"
+                                                                        v-bind:aria-labelledby="human5.name"
+                                                                        v-if="human5.info!=false">
+                                                                        <div v-html="human5.infoData"></div> <img
+                                                                            v-if="human5.infoImg!=false"
+                                                                            v-bind:src="human5.infoImg"
+                                                                            class="img-fluid" width="100px">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="person spouse" v-if="human5.spouse!=false"
+                                                                    v-bind:class="{dropdown:human5.SPinfo}">
+                                                                    <span data-bs-toggle="dropdown"
+                                                                        v-bind:id="human5.spouse">
+                                                                        {{human5.spouse}}
+                                                                    </span>
+                                                                    <div class="dropdown-menu px-3"
+                                                                        v-bind:aria-labelledby="human5.spouse">
+                                                                        <div v-html="human5.SPinfoData"></div> <img
+                                                                            v-if="human5.SPinfoImg!=false"
+                                                                            v-bind:src="human5.SPinfoImg"
+                                                                            class="img-fluid" width="100px">
+                                                                    </div>
+                                                                </div>
+                                                                <!-- 六世 -->
+                                                                <ul v-if="human5.children!=false">
+                                                                    <li class="treeli"
+                                                                        v-for="human6 in human5.children">
+                                                                        <div class="person"
+                                                                            v-bind:class="{dropdown:human6.info}">
+                                                                            <span data-bs-toggle="dropdown"
+                                                                                v-bind:id="human6.name">
+                                                                                {{human6.name}}
+                                                                            </span>
+                                                                            <div class="dropdown-menu px-3"
+                                                                                v-bind:aria-labelledby="human6.name"
+                                                                                v-if="human6.info!=false">
+                                                                                <div v-html="human6.infoData"></div>
+                                                                                <img v-if="human6.infoImg!=false"
+                                                                                    v-bind:src="human6.infoImg"
+                                                                                    class="img-fluid" width="100px">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="person spouse"
+                                                                            v-if="human6.spouse!=false"
+                                                                            v-bind:class="{dropdown:human6.SPinfo}">
+                                                                            <span data-bs-toggle="dropdown"
+                                                                                v-bind:id="human6.spouse">
+                                                                                {{human6.spouse}}
+                                                                            </span>
+                                                                            <div class="dropdown-menu px-3"
+                                                                                v-bind:aria-labelledby="human6.spouse">
+                                                                                <div v-html="human6.SPinfoData"></div>
+                                                                                <img v-if="human6.SPinfoImg!=false"
+                                                                                    v-bind:src="human6.SPinfoImg"
+                                                                                    class="img-fluid" width="100px">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- 七世 -->
+                                                                        <ul v-if="human6.children!=false">
+                                                                            <li class="treeli"
+                                                                                v-for="human7 in human6.children">
+                                                                                <div class="person"
+                                                                                    v-bind:class="{dropdown:human7.info}">
+                                                                                    <span data-bs-toggle="dropdown"
+                                                                                        v-bind:id="human7.name">
+                                                                                        {{human7.name}}
+                                                                                    </span>
+                                                                                    <div class="dropdown-menu px-3"
+                                                                                        v-bind:aria-labelledby="human7.name"
+                                                                                        v-if="human7.info!=false">
+                                                                                        <div v-html="human7.infoData">
+                                                                                        </div>
+                                                                                        <img v-if="human7.infoImg!=false"
+                                                                                            v-bind:src="human7.infoImg"
+                                                                                            class="img-fluid"
+                                                                                            width="100px">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="person spouse"
+                                                                                    v-if="human7.spouse!=false">
+                                                                                    <span>
+                                                                                        {{human7.spouse}}
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    <!-- Modal webInfo-->
+    <div class="modal fade" id="webInfo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content px-4">
+                <div class="modal-header">
+                    <h5 class="modal-title">關於本網站</h5>
+                    <button type="button" class="btn d-flex align-items-center" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span class="pt-1">關閉</span>
+                        <i class="bi bi-x h1 m-0"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="py-2 text-center">&copy; 2022&nbsp;KUO,YA-YUN&nbsp;版權所有</div>
+                    <div class="py-2">
+                        Internet&nbsp;Explorer&nbsp;11&nbsp;將於&nbsp;2022&nbsp;年&nbsp;6&nbsp;月&nbsp;15&nbsp;日淘汰。
+                        <br>所以本網站不支援&nbsp;Internet&nbsp;Explorer11，請以&nbsp;Google&nbsp;Chrome版本60以上&nbsp;/&nbsp;Microsoft
+                        Edge版本92以上&nbsp;/&nbsp;Firefox版本60以上&nbsp;/&nbsp;Safari 版本11以上&nbsp;以獲得最佳瀏覽體驗
+                    </div>
+                    <div class="py-2">
+                        手機瀏覽本網站操作較不方便，建議以電腦瀏覽。
+                    </div>
+                    <div class="py-2">
+                        若想新增家族資訊，可來信至<a href="mailto:kuo20210808@gmail.com?subject=主旨&body=內容">kuo20210808@gmail.com</a>
+                        作者會找時間更新。
+                    </div>
+                    <div class="pt-2 pb-5">
+                        <small>
+                            因作者能力有限，不接受功能上的修改意見，還請海涵。</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jquery.min.js -->
+        <script src="js/jquery.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+
+        <script src="./js/jquery.visible.min.js"></script>
+
+        <!-- Vue.js v2.6.11 -->
+        <script src="./js/Vue.min.js"></script>
+        <script src="./js/data.js"></script>
+
+
+        <script type="text/javascript" src="./js/full-screen-helper.min.js"></script>
+
+        <script src="./js/main.js"></script>
+
+
+        <script>
+
+
+            $(function () {
+
+                //Scroll the page on drag
+                function dragScroll(options) {
+                    var settings = $.extend({
+                        scrollVertical: true,
+                        scrollHorizontal: true,
+                        cursor: null
+                    }, options);
+
+                    var clicked = false,
+                        clickY, clickX;
+
+                    var getCursor = function () {
+                        if (settings.cursor) return settings.cursor;
+                        if (settings.scrollVertical && settings.scrollHorizontal) return 'move';
+                        if (settings.scrollVertical) return 'row-resize';
+                        if (settings.scrollHorizontal) return 'col-resize';
+                    }
+
+                    var updateScrollPos = function (e, el) {
+                        $('html').css('cursor', getCursor());
+                        var $el = $(el);
+                        settings.scrollVertical && $el.scrollTop($el.scrollTop() + (clickY - e.pageY));
+                        settings.scrollHorizontal && $el.scrollLeft($el.scrollLeft() + (clickX - e.pageX));
+                    }
+
+                    $(document).on({
+                        'mousemove': function (e) {
+                            clicked && updateScrollPos(e, this);
+                            // $('span').css('user-select', 'none');
+
+                        },
+                        'mousedown': function (e) {
+                            clicked = true;
+                            clickY = e.pageY;
+                            clickX = e.pageX;
+                            $('body').css('cursor', 'grab');
+                            $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
+                        },
+                        'mouseup': function () {
+                            clicked = false;
+                            $('body').css('cursor', 'auto');
+                            $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
+
+
+                        }
+                    });
+                }
+                dragScroll()
+                //滑鼠碰到姓名或資訊時不要有拖曳視窗的功能
+                $('.person').mousedown(function (e) {
+                    e.stopPropagation()
+                })
+                $('.modal.show').mousedown(function (e) {
+                    $(document).off("dragScroll")
+                })
+
+
+
+            })
+
+        </script>
+
+</body>
+
+</html>
