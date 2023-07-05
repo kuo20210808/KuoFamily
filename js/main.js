@@ -1,8 +1,6 @@
 
 $(function () {
-     if ($(window).width() < 600) {
-        alert('請用電腦觀看')
-    }
+    
     setTimeout(function () {
         $('body').removeClass('loading')
         ScrollCenter()
