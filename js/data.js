@@ -1,13 +1,14 @@
 $(function () {
 
-    //每一個人(除了身分是配偶的)都各自有一個{資料} 避免有後代的話還要傳{}進去造成回呼地域
+    //每一個人(除了身分是配偶的)都各自有一個{資料} 避免有後代的話還要傳{}進去造成回呼地獄
     //children:[小,大]
+
 
     //七世
     window.seven1_1 = window.seven1_1 || {};
-    window.seven1_1.data = { name: "郭鎮源", info: 1, spouse: 0, children: 0, infoData: `<h5>七世</h5>` };
+    window.seven1_1.data = { name: "郭鎮源", info: 1, spouse: 0, children: 0, infoData: `<h5>七世</h5>生於1992年12月16日<br>` };
     window.seven1_2 = window.seven1_2 || {};
-    window.seven1_2.data = { name: "郭雅云", info: 1, spouse: 0, children: 0, infoData: `<h5>七世</h5>` };
+    window.seven1_2.data = { name: "郭雅云", info: 1, spouse: 0, children: 0, infoData: `<h5><img width="70px" src="./img/郭雅云.png" alt="" class="img-fluid">七世</h5>生於1995年5月2日<br>` };
     window.seven3_1 = window.seven3_1 || {};
     window.seven3_1.data = { name: "郭宇衡", info: 1, spouse: 0, children: 0, infoData: `<h5>七世</h5>` };
     window.seven4_1 = window.seven4_1 || {};
@@ -32,7 +33,7 @@ $(function () {
     window.six1_1 = window.six1_1 || {};
     window.six1_1.data = { name: "郭育均", info: 1, spouse: 0, children: 0, infoData: `<h5>六世</h5>` };
     window.six1_2 = window.six1_2 || {};
-    window.six1_2.data = { name: "郭承棟", info: 1, spouse: "吳秀英", children: [seven1_2.data, seven1_1.data], infoData: `<h5>六世</h5>` };
+    window.six1_2.data = { name: "郭承棟", info: 1, spouse: "吳秀英", children: [seven1_2.data, seven1_1.data], infoData: `<h5><img width="70px" src="./img/郭承棟.png" alt="" class="img-fluid">六世</h5> <h6>台南 玉記</h6>生於1963年5月8日<br>  `, SPinfo: 1, SPinfoData: `生於1965年7月15日<br>`, };
     window.six3_1 = window.six3_1 || {};
     window.six3_1.data = { name: "郭懿嬋", info: 1, spouse: 0, children: 0, infoData: `<h5>六世</h5>` };
     window.six3_2 = window.six3_2 || {};
@@ -76,7 +77,7 @@ $(function () {
 
     //五世
     window.five4_1 = window.five4_1 || {};
-    window.five4_1.data = { name: "郭振益", info: 1, spouse: "郭王錦梅", children: [six1_2.data, six1_1.data], infoData: `<h5>五世</h5> <h6>台南 玉記</h6>` };
+    window.five4_1.data = { name: "郭振益", info: 1, spouse: "郭王錦梅", children: [six1_2.data, six1_1.data], infoData: `<h5>五世<img width="70px" src="./img/郭振益.png" alt="" class="img-fluid"></h5> <h6>台南 玉記</h6>生於XXX年X月<br>卒於2017年8月10日 `, SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭王錦梅.png" alt="" class="img-fluid"><br>生於1935年5月<br>卒於2023年1月2日 `, };
     window.five4_2 = window.five4_2 || {};
     window.five4_2.data = { name: "郭月裡", info: 1, spouse: 0, children: 0, infoData: `<h5>五世</h5>` };
     window.five4_3 = window.five4_3 || {};
@@ -195,6 +196,28 @@ $(function () {
                     ]
                 }
             ],//零世 結束 
+
+            配偶: [
+                {
+                    name: "成器公", info: 1, infoData: "福建省人", infoImg: 0,
+                    //一世
+                    children: [
+                        {
+                            name: "郭惟琶", info: 1, infoData: ` 
+                    <h5>渡臺始祖溫釀公</h5>
+                    <ul>
+                        <li>福建省 泉州府 晉江縣 南門外十九都 前坑鄉，係成器公之 孫。</li>
+                        <li>生於公元一八 O 二年(清嘉慶七年)</li>
+                        <li>約在一百五十年前遷移至臺。於台南定居，慘淡墾營。</li>
+                    </ul> `  , spouse: 0, children: [two3.data, two2.data, two1.data]
+                        },
+
+                    ]
+                }
+            ]
+
+
+
         },//data結束 
 
 

@@ -8,11 +8,9 @@ $(function () {
 
 
     var offL = $(window).width() / 2
-    var offH = $(window).height() / 2
 
     function ScrollCenter() {
         var centerL = $("#成器公").offset().left
-        // $(".tree-outter").scrollLeft(2800)
         $("html,body").animate({
             scrollLeft: Math.abs(centerL - offL),
             scrollTop: 0
@@ -115,28 +113,16 @@ $(function () {
 
 
     //load() html
-    $("#preface").click(function () {
+    $('.sidebar .nav-link').click(function () {
         $("#tree-outter").addClass('d-none')
         $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
         $("#wrapper").removeClass('d-none')
-        $("#wrapper").load('./preface.html');
-        $('this').addClass('active')
+        $('.sidebar .nav-link').removeClass('active')
+        $(this).addClass('active')
+        $("#wrapper").load($(this).attr('id') + '.html')
+    });
 
-    });
-    $("#death").click(function () {
-        $("#tree-outter").addClass('d-none')
-        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
-        $("#wrapper").removeClass('d-none')
-        $("#wrapper").load('./death.html');
-        $('this').addClass('active')
-    });
-    $("#event").click(function () {
-        $("#tree-outter").addClass('d-none')
-        $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
-        $("#wrapper").removeClass('d-none')
-        $("#wrapper").load('./event.html');
-        $('this').addClass('active')
-    });
+
     $("#tree").click(function () {
         $("#tree-outter").removeClass('d-none')
         $('#zoomIn,#zoomOut,#zoomInt,#grandPa').removeClass('d-none')
