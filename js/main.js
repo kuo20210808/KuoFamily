@@ -1,7 +1,7 @@
 
 $(function () {
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-        alert('1')
+     if ($(window).width() < 600) {
+        alert('請用電腦觀看')
     }
     setTimeout(function () {
         $('body').removeClass('loading')
