@@ -116,7 +116,7 @@ $(function () {
             <img src="./img/郭玉記1930_01_03.jpg" alt="" class="img-fluid">
 
             `,
-        SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭張春.png" alt="郭張春" class="img-fluid"><br>生於1935年5月<br>卒於2023年1月2日 `,
+        SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭張春.png" alt="郭張春" class="img-fluid"><br>生於????年?月?日<br>卒於????年?月?日 `,
     };
     window.four1_4 = window.four1_4 || {};
     window.four1_4.data = { name: "為智", info: 0, spouse: 0, children: 0 };
