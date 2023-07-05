@@ -340,7 +340,6 @@ div.tree {
     border-top: 1px solid #ccc;
     width: calc(50% + 1.5rem);
     height: 25px;
-    z-index: -1;
 }
 
 .tree li.treeli::after {
@@ -410,7 +409,6 @@ div.tree {
         line-height: 2rem;
         min-height: 112px;
         vertical-align: middle;
-        z-index: -1;
         position: relative;
 
     }
@@ -419,6 +417,10 @@ div.tree {
 .spouse {
     position: absolute;
     transform: translateX(-2rem);
+}
+
+.spouse.dropdown {
+    z-index: 3;
 }
 
 .spouse span:before {
