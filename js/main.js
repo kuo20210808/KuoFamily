@@ -1,6 +1,7 @@
 
 $(function () {
-    
+
+
     setTimeout(function () {
         $('body').removeClass('loading')
         ScrollCenter()
@@ -122,7 +123,10 @@ $(function () {
         $("#wrapper").load($(this).attr('id') + '.html')
     });
 
+    $('.sidebar h5 .link-dark').click(function () {
+        $('.sidebar .nav-link').removeClass('active')
 
+    })
     $("#tree").click(function () {
         $("#tree-outter").removeClass('d-none')
         $('#zoomIn,#zoomOut,#zoomInt,#grandPa').removeClass('d-none')
