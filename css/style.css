@@ -9710,7 +9710,7 @@ body.finish::after {
   top: 0;
   height: 100%;
   width: 280px;
-  z-index: 2;
+  z-index: 4;
 }
 .sidebar h5 a, .sidebar .h5 a {
   transition: all 0.3s;
@@ -9728,7 +9728,7 @@ a {
 
 :target,
 .target {
-  animation: target 0.5s 4;
+  animation: target 0.5s 2;
   animation-timing-function: ease-in, linear, linear, ease-out;
 }
 
@@ -9796,7 +9796,7 @@ a {
   position: fixed;
   top: 0;
   left: 280px;
-  z-index: 2;
+  z-index: 4;
 }
 .zoom .btn {
   border-radius: 0px;
@@ -10100,7 +10100,12 @@ div.tree {
 }
 .customTable2 tr {
   border-left: 1px solid rgb(222, 226, 230);
-  min-height: 330px;
+  min-height: 340px;
+}
+.customTable2 img {
+  max-height: 323px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .customTable2 tr:last-child {
   border-bottom: none;
@@ -10108,4 +10113,9 @@ div.tree {
 .customTable2 ul {
   margin: 0;
   padding-left: 0;
+}
+
+.table-event tr td:nth-child(23),
+.table-event tr td:nth-child(23) ~ td {
+  background-color: rgba(255, 255, 255, 0.4);
 }/*# sourceMappingURL=style.css.map */
