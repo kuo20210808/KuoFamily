@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>郭姓惟琶祖譜</title>
+    <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./font/bootstrap-icons.css">
     <style>
@@ -118,182 +119,234 @@
                                     v-bind:src="human0.infoImg" class="img-fluid" width="100px">
                             </div>
                         </div>
-                        <div class="person spouse" v-if="human0.spouse!=false">
-                            <span>
+                        <div class="person spouse" v-if="human0.spouse!=false" v-bind:class="{dropdown:human0.SPinfo}">
+                            <span data-bs-toggle="dropdown" v-bind:id="human0.spouse">
                                 {{human0.spouse}}
                             </span>
+                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human0.spouse">
+                                <div v-html="human0.SPinfoData"></div>
+                            </div>
                         </div>
+                        <!-- 不可考(成器公的兒子)  -->
                         <ul v-if="human0.children!=false">
-                            <li class="treeli" v-for="human1 in human0.children">
-                                <div class="person" v-bind:class="{dropdown:human1.info}">
-                                    <span data-bs-toggle="dropdown" v-bind:id="human1.name">
-                                        {{human1.name}}
+                            <li class="treeli" v-for="human00 in human0.children">
+                                <div class="person" v-bind:class="{dropdown:human00.info}">
+                                    <span data-bs-toggle="dropdown" v-bind:id="human00.name">
+                                        {{human00.name}}
                                     </span>
-                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human1.name"
-                                        v-if="human1.info!=false">
-                                        <div v-html="human1.infoData"></div>
+                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human00.name"
+                                        v-if="human00.info!=false">
+                                        <div v-html="human00.infoData"></div>
                                     </div>
                                 </div>
-                                <div class="person spouse" v-if="human1.spouse!=false">
-                                    <span>
-                                        {{human1.spouse}}
+                                <div class="person spouse" v-if="human00.spouse!=false"
+                                    v-bind:class="{dropdown:human00.SPinfo}">
+                                    <span data-bs-toggle="dropdown" v-bind:id="human00.spouse">
+                                        {{human00.spouse}}
                                     </span>
+                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human00.spouse">
+                                        <div v-html="human00.SPinfoData"></div>
+                                    </div>
                                 </div>
-                                <ul v-if="human1.children!=false">
-                                    <li class="treeli" v-for="human2 in human1.children">
-                                        <div class="person" v-bind:class="{dropdown:human2.info}">
-                                            <span data-bs-toggle="dropdown" v-bind:id="human2.name">
-                                                {{human2.name}}
+                                <!-- 一世(成器公的孫子) -->
+                                <ul v-if="human00.children!=false">
+                                    <li class="treeli" v-for="human1 in human00.children">
+                                        <div class="person" v-bind:class="{dropdown:human1.info}">
+                                            <span data-bs-toggle="dropdown" v-bind:id="human1.name">
+                                                {{human1.name}}
                                             </span>
-                                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human2.name"
-                                                v-if="human2.info!=false">
-                                                <div v-html="human2.infoData"></div>
+                                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human1.name"
+                                                v-if="human1.info!=false">
+                                                <div v-html="human1.infoData"></div>
                                             </div>
                                         </div>
-                                        <div class="person spouse" v-if="human1.spouse!=false">
-                                            <span>
-                                                {{human2.spouse}}
+                                        <div class="person spouse" v-if="human1.spouse!=false"
+                                            v-bind:class="{dropdown:human1.SPinfo}">
+                                            <span data-bs-toggle="dropdown" v-bind:id="human1.spouse">
+                                                {{human1.spouse}}
                                             </span>
+                                            <div class="dropdown-menu px-3" v-bind:aria-labelledby="human1.spouse">
+                                                <div v-html="human1.SPinfoData"></div>
+                                            </div>
                                         </div>
-                                        <ul v-if="human2.children!=false">
-                                            <li class="treeli" v-for="human3 in human2.children">
-                                                <div class="person" v-bind:class="{dropdown:human3.info}">
-                                                    <span data-bs-toggle="dropdown" v-bind:id="human3.name">
-                                                        {{human3.name}}
+                                        <ul v-if="human1.children!=false">
+                                            <li class="treeli" v-for="human2 in human1.children">
+                                                <div class="person" v-bind:class="{dropdown:human2.info}">
+                                                    <span data-bs-toggle="dropdown" v-bind:id="human2.name">
+                                                        {{human2.name}}
                                                     </span>
-                                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human3.name"
-                                                        v-if="human3.info!=false">
-                                                        <div v-html="human3.infoData"></div> <img
-                                                            v-if="human3.infoImg!=false" v-bind:src="human3.infoImg"
-                                                            class="img-fluid" width="100px">
+                                                    <div class="dropdown-menu px-3" v-bind:aria-labelledby="human2.name"
+                                                        v-if="human2.info!=false">
+                                                        <div v-html="human2.infoData"></div>
                                                     </div>
                                                 </div>
-                                                <div class="person spouse" v-if="human3.spouse!=false">
-                                                    <span>
-                                                        {{human3.spouse}}
+                                                <div class="person spouse" v-if="human2.spouse!=false"
+                                                    v-bind:class="{dropdown:human2.SPinfo}">
+                                                    <span data-bs-toggle="dropdown" v-bind:id="human2.spouse">
+                                                        {{human2.spouse}}
                                                     </span>
+                                                    <div class="dropdown-menu px-3"
+                                                        v-bind:aria-labelledby="human2.spouse">
+                                                        <div v-html="human2.SPinfoData"></div>
+                                                    </div>
                                                 </div>
-                                                <!-- 四世 -->
-                                                <ul v-if="human3.children!=false">
-                                                    <li class="treeli" v-for="human4 in human3.children">
-                                                        <div class="person" v-bind:class="{dropdown:human4.info}">
-                                                            <span data-bs-toggle="dropdown" v-bind:id="human4.name">
-                                                                {{human4.name}}
+                                                <ul v-if="human2.children!=false">
+                                                    <li class="treeli" v-for="human3 in human2.children">
+                                                        <div class="person" v-bind:class="{dropdown:human3.info}">
+                                                            <span data-bs-toggle="dropdown" v-bind:id="human3.name">
+                                                                {{human3.name}}
                                                             </span>
                                                             <div class="dropdown-menu px-3"
-                                                                v-bind:aria-labelledby="human4.name"
-                                                                v-if="human4.info!=false">
-                                                                <div v-html="human4.infoData"></div> <img
-                                                                    v-if="human4.infoImg!=false"
-                                                                    v-bind:src="human4.infoImg" class="img-fluid"
+                                                                v-bind:aria-labelledby="human3.name"
+                                                                v-if="human3.info!=false">
+                                                                <div v-html="human3.infoData"></div> <img
+                                                                    v-if="human3.infoImg!=false"
+                                                                    v-bind:src="human3.infoImg" class="img-fluid"
                                                                     width="100px">
                                                             </div>
                                                         </div>
-                                                        <div class="person spouse" v-if="human4.spouse!=false"
-                                                            v-bind:class="{dropdown:human4.SPinfo}">
-                                                            <span data-bs-toggle="dropdown" v-bind:id="human4.spouse">
-                                                                {{human4.spouse}}
+                                                        <div class="person spouse" v-if="human3.spouse!=false"
+                                                            v-bind:class="{dropdown:human3.SPinfo}">
+                                                            <span data-bs-toggle="dropdown" v-bind:id="human3.spouse">
+                                                                {{human3.spouse}}
                                                             </span>
                                                             <div class="dropdown-menu px-3"
-                                                                v-bind:aria-labelledby="human4.spouse">
-                                                                <div v-html="human4.SPinfoData"></div>
+                                                                v-bind:aria-labelledby="human3.spouse">
+                                                                <div v-html="human3.SPinfoData"></div>
                                                             </div>
                                                         </div>
-                                                        <!-- 五世 -->
-                                                        <ul v-if="human4.children!=false">
-                                                            <li class="treeli" v-for="human5 in human4.children">
+                                                        <!-- 四世 -->
+                                                        <ul v-if="human3.children!=false">
+                                                            <li class="treeli" v-for="human4 in human3.children">
                                                                 <div class="person"
-                                                                    v-bind:class="{dropdown:human5.info}">
+                                                                    v-bind:class="{dropdown:human4.info}">
                                                                     <span data-bs-toggle="dropdown"
-                                                                        v-bind:id="human5.name">
-                                                                        {{human5.name}}
+                                                                        v-bind:id="human4.name">
+                                                                        {{human4.name}}
                                                                     </span>
                                                                     <div class="dropdown-menu px-3"
-                                                                        v-bind:aria-labelledby="human5.name"
-                                                                        v-if="human5.info!=false">
-                                                                        <div v-html="human5.infoData"></div> <img
-                                                                            v-if="human5.infoImg!=false"
-                                                                            v-bind:src="human5.infoImg"
+                                                                        v-bind:aria-labelledby="human4.name"
+                                                                        v-if="human4.info!=false">
+                                                                        <div v-html="human4.infoData"></div> <img
+                                                                            v-if="human4.infoImg!=false"
+                                                                            v-bind:src="human4.infoImg"
                                                                             class="img-fluid" width="100px">
                                                                     </div>
                                                                 </div>
-                                                                <div class="person spouse" v-if="human5.spouse!=false"
-                                                                    v-bind:class="{dropdown:human5.SPinfo}">
+                                                                <div class="person spouse" v-if="human4.spouse!=false"
+                                                                    v-bind:class="{dropdown:human4.SPinfo}">
                                                                     <span data-bs-toggle="dropdown"
-                                                                        v-bind:id="human5.spouse">
-                                                                        {{human5.spouse}}
+                                                                        v-bind:id="human4.spouse">
+                                                                        {{human4.spouse}}
                                                                     </span>
                                                                     <div class="dropdown-menu px-3"
-                                                                        v-bind:aria-labelledby="human5.spouse">
-                                                                        <div v-html="human5.SPinfoData"></div> <img
-                                                                            v-if="human5.SPinfoImg!=false"
-                                                                            v-bind:src="human5.SPinfoImg"
-                                                                            class="img-fluid" width="100px">
+                                                                        v-bind:aria-labelledby="human4.spouse">
+                                                                        <div v-html="human4.SPinfoData"></div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- 六世 -->
-                                                                <ul v-if="human5.children!=false">
+                                                                <!-- 五世 -->
+                                                                <ul v-if="human4.children!=false">
                                                                     <li class="treeli"
-                                                                        v-for="human6 in human5.children">
+                                                                        v-for="human5 in human4.children">
                                                                         <div class="person"
-                                                                            v-bind:class="{dropdown:human6.info}">
+                                                                            v-bind:class="{dropdown:human5.info}">
                                                                             <span data-bs-toggle="dropdown"
-                                                                                v-bind:id="human6.name">
-                                                                                {{human6.name}}
+                                                                                v-bind:id="human5.name">
+                                                                                {{human5.name}}
                                                                             </span>
                                                                             <div class="dropdown-menu px-3"
-                                                                                v-bind:aria-labelledby="human6.name"
-                                                                                v-if="human6.info!=false">
-                                                                                <div v-html="human6.infoData"></div>
+                                                                                v-bind:aria-labelledby="human5.name"
+                                                                                v-if="human5.info!=false">
+                                                                                <div v-html="human5.infoData"></div>
+                                                                                <img v-if="human5.infoImg!=false"
+                                                                                    v-bind:src="human5.infoImg"
+                                                                                    class="img-fluid" width="100px">
                                                                             </div>
                                                                         </div>
                                                                         <div class="person spouse"
-                                                                            v-if="human6.spouse!=false"
-                                                                            v-bind:class="{dropdown:human6.SPinfo}">
+                                                                            v-if="human5.spouse!=false"
+                                                                            v-bind:class="{dropdown:human5.SPinfo}">
                                                                             <span data-bs-toggle="dropdown"
-                                                                                v-bind:id="human6.spouse">
-                                                                                {{human6.spouse}}
+                                                                                v-bind:id="human5.spouse">
+                                                                                {{human5.spouse}}
                                                                             </span>
                                                                             <div class="dropdown-menu px-3"
-                                                                                v-bind:aria-labelledby="human6.spouse">
+                                                                                v-bind:aria-labelledby="human5.spouse">
+                                                                                <div v-html="human5.SPinfoData"></div>
                                                                             </div>
                                                                         </div>
-                                                                        <!-- 七世 -->
-                                                                        <ul v-if="human6.children!=false">
+                                                                        <!-- 六世 -->
+                                                                        <ul v-if="human5.children!=false">
                                                                             <li class="treeli"
-                                                                                v-for="human7 in human6.children">
+                                                                                v-for="human6 in human5.children">
                                                                                 <div class="person"
-                                                                                    v-bind:class="{dropdown:human7.info}">
+                                                                                    v-bind:class="{dropdown:human6.info}">
                                                                                     <span data-bs-toggle="dropdown"
-                                                                                        v-bind:id="human7.name">
-                                                                                        {{human7.name}}
+                                                                                        v-bind:id="human6.name">
+                                                                                        {{human6.name}}
                                                                                     </span>
                                                                                     <div class="dropdown-menu px-3"
-                                                                                        v-bind:aria-labelledby="human7.name"
-                                                                                        v-if="human7.info!=false">
-                                                                                        <div v-html="human7.infoData">
+                                                                                        v-bind:aria-labelledby="human6.name"
+                                                                                        v-if="human6.info!=false">
+                                                                                        <div v-html="human6.infoData">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="person spouse"
-                                                                                    v-if="human7.spouse!=false"
-                                                                                    v-bind:class="{dropdown:human7.SPinfo}">
+                                                                                    v-if="human6.spouse!=false"
+                                                                                    v-bind:class="{dropdown:human6.SPinfo}">
                                                                                     <span data-bs-toggle="dropdown"
-                                                                                        v-bind:id="human7.spouse">
-                                                                                        {{human7.spouse}}
+                                                                                        v-bind:id="human6.spouse">
+                                                                                        {{human6.spouse}}
                                                                                     </span>
                                                                                     <div class="dropdown-menu px-3"
-                                                                                        v-bind:aria-labelledby="human7.spouse">
-                                                                                        <div v-html="human7.SPinfoData">
+                                                                                        v-bind:aria-labelledby="human6.spouse">
+                                                                                        <div v-html="human6.SPinfoData">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
+                                                                                <!-- 七世 -->
+                                                                                <ul v-if="human6.children!=false">
+                                                                                    <li class="treeli"
+                                                                                        v-for="human7 in human6.children">
+                                                                                        <div class="person"
+                                                                                            v-bind:class="{dropdown:human7.info}">
+                                                                                            <span
+                                                                                                data-bs-toggle="dropdown"
+                                                                                                v-bind:id="human7.name">
+                                                                                                {{human7.name}}
+                                                                                            </span>
+                                                                                            <div class="dropdown-menu px-3"
+                                                                                                v-bind:aria-labelledby="human7.name"
+                                                                                                v-if="human7.info!=false">
+                                                                                                <div
+                                                                                                    v-html="human7.infoData">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="person spouse"
+                                                                                            v-if="human7.spouse!=false"
+                                                                                            v-bind:class="{dropdown:human7.SPinfo}">
+                                                                                            <span
+                                                                                                data-bs-toggle="dropdown"
+                                                                                                v-bind:id="human7.spouse">
+                                                                                                {{human7.spouse}}
+                                                                                            </span>
+                                                                                            <div class="dropdown-menu px-3"
+                                                                                                v-bind:aria-labelledby="human7.spouse">
+                                                                                                <div
+                                                                                                    v-html="human7.SPinfoData">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
 
+                                                                                    </li>
+                                                                                </ul>
                                                                             </li>
                                                                         </ul>
+
                                                                     </li>
                                                                 </ul>
-
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -304,6 +357,7 @@
                                 </ul>
                             </li>
                         </ul>
+
                     </li>
                 </ul>
             </div>
@@ -339,7 +393,7 @@
         <!-- jquery.min.js -->
         <script src="js/jquery.min.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
-
+        <script src="./js/jquery.fancybox.min.js"></script>
         <script src="./js/jquery.visible.min.js"></script>
 
         <!-- Vue.js v2.6.11 -->
