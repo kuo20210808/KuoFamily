@@ -414,6 +414,20 @@ div.tree {
     }
 }
 
+//媽寶:only-child
+.tree li.treeli:only-child>.person {
+    // margin-top: 24px;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: -24px;
+    //     left: calc(50% - 4px);
+    //     border-left: 1px solid #ccc;
+    //     width: 0;
+    //     height: 24px;
+    // }
+}
+
 .spouse {
     position: absolute;
     transform: translateX(-2rem);
@@ -516,8 +530,8 @@ div.tree {
 .table-event {
     tr {
 
-        td:nth-child(23),
-        td:nth-child(23)~td {
+        td:nth-child(26),
+        td:nth-child(26)~td {
             background-color: rgba(255, 255, 255, .4);
         }
     }
