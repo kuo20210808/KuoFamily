@@ -101,9 +101,9 @@
 
         <div class="tree-outter" style="padding-bottom: 120px" id="tree-outter">
             <div class="verticle-text py-5 position-fixed" style="right: 0px; z-index: 100;">
-                <h1>
-                    郭姓惟琶渡臺始祖世襲表
-                </h1>
+                <h4>
+                    郭姓惟琶渡臺始祖世襲圖
+                </h4>
             </div>
 
             <div class="tree" id="family">
@@ -379,99 +379,104 @@
                 <div class="modal-body">
                     <div class="py-2 text-center">&copy; 2023&nbsp;KUO,YA-YUN&nbsp;版權所有</div>
                     <div class="py-2">
-                        手機瀏覽本網站操作不方便，建議以電腦瀏覽。
-                    </div>
-                    <div class="py-2">
-                        若想新增家族資訊，可來信至<a href="mailto:kuo20210808@gmail.com?subject=主旨&body=內容">kuo20210808@gmail.com</a>
-                        作者會再找時間更新。
+                        網站作者：(郭添信的直系)七世的郭雅云。
                         <br>
-                        但作者只是業餘的，能力有限恕不接受功能上的修改意見，還請海涵。
+                        資料來源：(郭添信的旁系)五世的郭振元主編與六世的郭光世助邊、郭春廷建檔所提供的《郭姓惟琶渡臺始祖世襲譜》；
+                        戶口名簿等資料
+                        <br>
+
+                        <div class="py-2">
+                            若想新增修改家族資訊，可來信至<a
+                                href="mailto:kuo20210808@gmail.com?subject=主旨&body=內容">kuo20210808@gmail.com</a>
+                            作者會再找時間更新。
+                            <br>
+                            但作者能力有限恕不接受功能上的修改意見，還請海涵。
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- jquery.min.js -->
-        <script src="js/jquery.min.js"></script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="./js/jquery.fancybox.min.js"></script>
-        <script src="./js/jquery.visible.min.js"></script>
+            <!-- jquery.min.js -->
+            <script src="js/jquery.min.js"></script>
+            <script src="./js/bootstrap.bundle.min.js"></script>
+            <script src="./js/jquery.fancybox.min.js"></script>
+            <script src="./js/jquery.visible.min.js"></script>
 
-        <!-- Vue.js v2.6.11 -->
-        <script src="./js/Vue.min.js"></script>
-        <script src="./js/data.js"></script>
-
-
-        <script type="text/javascript" src="./js/full-screen-helper.min.js"></script>
-
-        <script src="./js/main.js"></script>
+            <!-- Vue.js v2.6.11 -->
+            <script src="./js/Vue.min.js"></script>
+            <script src="./js/data.js"></script>
 
 
-        <script>
+            <script type="text/javascript" src="./js/full-screen-helper.min.js"></script>
+
+            <script src="./js/main.js"></script>
 
 
-            $(function () {
-
-                //Scroll the page on drag
-                function dragScroll(options) {
-                    var settings = $.extend({
-                        scrollVertical: true,
-                        scrollHorizontal: true,
-                        cursor: null
-                    }, options);
-
-                    var clicked = false,
-                        clickY, clickX;
-
-                    var getCursor = function () {
-                        if (settings.cursor) return settings.cursor;
-                        if (settings.scrollVertical && settings.scrollHorizontal) return 'move';
-                        if (settings.scrollVertical) return 'row-resize';
-                        if (settings.scrollHorizontal) return 'col-resize';
-                    }
-
-                    var updateScrollPos = function (e, el) {
-                        $('html').css('cursor', getCursor());
-                        var $el = $(el);
-                        settings.scrollVertical && $el.scrollTop($el.scrollTop() + (clickY - e.pageY));
-                        settings.scrollHorizontal && $el.scrollLeft($el.scrollLeft() + (clickX - e.pageX));
-                    }
-
-                    $(document).on({
-                        'mousemove': function (e) {
-                            clicked && updateScrollPos(e, this);
-                            // $('span').css('user-select', 'none');
-
-                        },
-                        'mousedown': function (e) {
-                            clicked = true;
-                            clickY = e.pageY;
-                            clickX = e.pageX;
-                            $('body').css('cursor', 'grab');
-                            $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
-                        },
-                        'mouseup': function () {
-                            clicked = false;
-                            $('body').css('cursor', 'auto');
-                            $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
+            <script>
 
 
+                $(function () {
+
+                    //Scroll the page on drag
+                    function dragScroll(options) {
+                        var settings = $.extend({
+                            scrollVertical: true,
+                            scrollHorizontal: true,
+                            cursor: null
+                        }, options);
+
+                        var clicked = false,
+                            clickY, clickX;
+
+                        var getCursor = function () {
+                            if (settings.cursor) return settings.cursor;
+                            if (settings.scrollVertical && settings.scrollHorizontal) return 'move';
+                            if (settings.scrollVertical) return 'row-resize';
+                            if (settings.scrollHorizontal) return 'col-resize';
                         }
-                    });
-                }
-                dragScroll()
-                //滑鼠碰到姓名或資訊時不要有拖曳視窗的功能
-                $('.person').mousedown(function (e) {
-                    e.stopPropagation()
+
+                        var updateScrollPos = function (e, el) {
+                            $('html').css('cursor', getCursor());
+                            var $el = $(el);
+                            settings.scrollVertical && $el.scrollTop($el.scrollTop() + (clickY - e.pageY));
+                            settings.scrollHorizontal && $el.scrollLeft($el.scrollLeft() + (clickX - e.pageX));
+                        }
+
+                        $(document).on({
+                            'mousemove': function (e) {
+                                clicked && updateScrollPos(e, this);
+                                // $('span').css('user-select', 'none');
+
+                            },
+                            'mousedown': function (e) {
+                                clicked = true;
+                                clickY = e.pageY;
+                                clickX = e.pageX;
+                                $('body').css('cursor', 'grab');
+                                $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
+                            },
+                            'mouseup': function () {
+                                clicked = false;
+                                $('body').css('cursor', 'auto');
+                                $('span,.dropdowm-menu,.modal.show').css('cursor', 'auto');
+
+
+                            }
+                        });
+                    }
+                    dragScroll()
+                    //滑鼠碰到姓名或資訊時不要有拖曳視窗的功能
+                    $('.person').mousedown(function (e) {
+                        e.stopPropagation()
+                    })
+                    $('.modal.show').mousedown(function (e) {
+                        $(document).off("dragScroll")
+                    })
+
+
+
                 })
-                $('.modal.show').mousedown(function (e) {
-                    $(document).off("dragScroll")
-                })
 
-
-
-            })
-
-        </script>
+            </script>
 
 </body>
 
