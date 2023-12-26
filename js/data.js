@@ -31,9 +31,13 @@ $(function () {
         name: "郭泳青", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5><ul>
     <li>生於2000年</li></ul>` };
     window.seven8_1 = window.seven8_1 || {};
-    window.seven8_1.data = { name: "郭培弘", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5>` };
+    window.seven8_1.data = {
+        name: "郭培弘", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5><ul>
+    <li>生於1999年8月31日</li></ul>` };
     window.seven8_2 = window.seven8_2 || {};
-    window.seven8_2.data = { name: "郭培德", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5>` };
+    window.seven8_2.data = {
+        name: "郭培德", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5><ul>
+    <li>生於2000年9月21日</li></ul>` };
     window.seven9_1 = window.seven9_1 || {};
     window.seven9_1.data = { name: "郭少恩", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5>` };
     window.seven9_2 = window.seven9_2 || {};
@@ -170,7 +174,7 @@ $(function () {
     window.six9_4 = window.six9_4 || {};
     window.six9_4.data = {
         name: "郭承峰", info: 1, spouse: "楊麟鈞", children: [seven9_3.data, seven9_2.data, seven9_1.data], infoData: `<h5>【六世】</h5<ul>
-    <li>生於1976年1月27</li></ul>>` };
+    <li>生於1976年1月27</li></ul>` };
 
     //五世
     window.five1_1 = window.five1_1 || {};
@@ -280,7 +284,9 @@ $(function () {
             `     <h5><img width="70px" src="./img/郭添信.png" alt="郭添信" class="img-fluid">【四世】為信公</h5>
             <ul>
                 <li>郭寶玉第三子。</li>
-                <li>生於1903年(民國前9年)2月1日</li>
+                <li>生於1903年(民國前9年)2月1日
+                <br>卒於1960年(民國49年)7月9日(農曆六月十六日)
+                </li>
                 <li>元配林氏。 再娶郭張春</li>
                 <li>玉記行</h6></li>
             </ul>                  
@@ -289,7 +295,7 @@ $(function () {
             <div><img src="./img/郭玉記名片1930_01_03.jpg" alt="" class="img-fluid"></div>
             `,
         SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭張春.png" alt="郭張春" class="img-fluid">
-        <br>生於1906年(民國前6年)12月5日<br>卒於????年正月二十七日 
+        <br>生於1906年(民國前6年)12月5日<br>卒於?年正月二十七日 
         `,
     };
     window.four1_4 = window.four1_4 || {};
