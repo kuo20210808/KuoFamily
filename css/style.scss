@@ -55,7 +55,11 @@ body.finish {
     top: 0;
     height: 100%;
     width: 280px;
-    z-index: 4;
+    z-index: 100;
+
+    a#tree {
+        cursor: pointer;
+    }
 
     h5 a {
         transition: all .3s;

@@ -9705,7 +9705,10 @@ body.finish::after {
   top: 0;
   height: 100%;
   width: 280px;
-  z-index: 4;
+  z-index: 100;
+}
+.sidebar a#tree {
+  cursor: pointer;
 }
 .sidebar h5 a, .sidebar .h5 a {
   transition: all 0.3s;
