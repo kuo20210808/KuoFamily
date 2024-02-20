@@ -38,8 +38,13 @@ $(function () {
         $(this).find('.dropdown-menu').toggleClass('show')
     })
 
-
-
+    //讓dropdown不要被擋到
+    $('.nospouse.dropdown').mouseover(function () {
+        $(this).css('z-index', '4')
+    })
+    $('.nospouse.dropdown').mouseleave(function () {
+        $(this).css('z-index', '')
+    })
 
 
     //scroll anchor 

@@ -2,6 +2,7 @@ $(function () {
 
     //每一個人都各自有一個{資料} 避免有後代的話還要傳{}進去造成回呼地獄
     // name: "", info: 1, spouse: "", SPinfo: 1, infoData:"",SPinfoData:"",children: children:[小,大]
+    //是女婿的話多加SonLaw: 1 例如林魁
     // window.(幾世)(上一代的排行)_(自家排行)
 
 
@@ -71,7 +72,7 @@ $(function () {
 
     window.six1_1 = window.six1_1 || {};
     window.six1_1.data = {
-        name: "郭育均", info: 1, spouse: "林魁", SPinfo: 1, SPinfoData: `生於1956年5月9日<br>`, children: 0, infoData: `<h5>【六世】</h5>
+        name: "郭育均", info: 1, spouse: "林魁", SonLaw: 1, SPinfo: 1, SPinfoData: `生於1956年5月9日<br>`, children: 0, infoData: `<h5>【六世】</h5>
     <ul>
     <li><small>原名: </small>淑芬</li>
     <li>生於1958年10月12日</li>
@@ -122,7 +123,10 @@ $(function () {
     window.six4_4 = window.six4_4 || {};
     window.six4_4.data = {
         name: "郭錦慧", info: 1, spouse: 0, children: 0, infoData: `<h5>【六世】</h5><ul>
-    <li>生於1968年9月23</li></ul>` };
+    <li>生於1968年9月23</li><li>聲樂家</li>
+    <li>畢業於加拿大蒙特利爾大學聲樂碩士</li>
+    <li>義大利其嘉納音樂學院大師班</li>
+    </ul>` };
     window.six4_5 = window.six4_5 || {};
     window.six4_5.data = {
         name: "郭瑞華", info: 1, spouse: 0, children: 0, infoData: `<h5>【六世】</h5><ul>
@@ -173,7 +177,7 @@ $(function () {
     <li>生於1972年5月20</li></ul>` };
     window.six9_4 = window.six9_4 || {};
     window.six9_4.data = {
-        name: "郭承峰", info: 1, spouse: "楊麟鈞", children: [seven9_3.data, seven9_2.data, seven9_1.data], infoData: `<h5>【六世】</h5<ul>
+        name: "郭承峰", info: 1, spouse: "楊麟鈞", children: [seven9_3.data, seven9_2.data, seven9_1.data], infoData: `<h5>【六世】</h5><ul>
     <li>生於1976年1月27</li></ul>` };
 
     //五世
@@ -186,7 +190,22 @@ $(function () {
     window.five1_4 = window.five1_4 || {};
     window.five1_4.data = { name: "郭振枝", info: 0, spouse: 0, children: [sixAdd4_2.data, sixAdd4_1.data], infoData: 0 };
     window.five1_5 = window.five1_5 || {};
-    window.five1_5.data = { name: "郭振純", info: 0, spouse: 0, children: 0, infoData: 0 };
+    window.five1_5.data = {
+        name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5>【六世】
+        </h5><ul>
+    <li>生於1925年</li>
+    <li>卒於2018年</li>
+    <li>1937年畢業後就讀高雄州立屏東農校</li>
+    <li>1951年，郭振純幫忙葉廷珪參選臺南市長時認識 <a href="https://zh.wikipedia.org/wiki/%E4%B8%81%E7%AA%88%E7%AA%95">丁窈窕</a>，  
+    </br>兩人因志趣相投相戀。</br>
+    但郭男考慮參與社會運動會彼此拖累，而解除婚約
+    </li>
+    <li>1953年5月20日由於不肯指認葉廷珪是廖文毅的同夥</br>而遭到逮捕刑求。 </li>
+    <li>1954年11月18日，被以「參加叛亂之集會」罪名判處無期徒刑，  </br>褫奪公權終身，移往新店安坑軍人監獄、綠島新生訓</li>
+    <li>1975年，由於蔣介石過世，郭振純獲得減刑特赦，得以開釋出獄。  </br>到他7月14日離開為止，他在牢獄中度過22年54日</li>
+    <li>2004年起，他開始不停地參與白色恐怖口述史工作</li>
+    <li>2008年將自身的故事寫成小說《耕甘藷園的人》出版</li>
+    </ul>` };
 
     window.five4_0 = window.five4_0 || {};
     window.five4_0.data = { name: "郭振利", info: 1, spouse: 0, children: 0, infoData: `小時候夭折` };
@@ -222,7 +241,7 @@ $(function () {
         infoData: `<h5>【五世】</h5>
      <ul>
     <li>生於1929年8月20日</li>
-    <li>卒於不詳</li>
+    <li>卒於吉日</li>
     <li>國民小學畢業</li>
     <li>曾做過畫師(自由業)</li>
     <li>曾任玉記號(零售)店員</li>
@@ -234,7 +253,7 @@ $(function () {
     window.five4_4.data = {
         name: "郭振福", info: 1, spouse: "郭胡明玉", children: [six4_6.data, six4_5.data, six4_4.data, six4_3.data, six4_2.data, six4_1.data],
         infoData: `<h5>【五世】</h5> <ul>
-    <li>生於1933年11月7日</li></ul>` , SPinfo: 1, SPinfoData: `<ul><li>生於1938年5月6日</li><li>卒於不詳</li></ul>`
+    <li>生於1933年11月7日</li> <li>卒於2024年2月20日 </li></ul>` , SPinfo: 1, SPinfoData: `<ul><li>生於1938年5月6日</li><li>卒於吉日</li></ul>`
     };
     window.five4_5 = window.five4_5 || {};
     window.five4_5.data = { name: "郭月雲", info: 1, spouse: 0, children: 0, infoData: `<h5>【五世】</h5><ul><li>生於1936年3月5日</li></ul>` };

@@ -119,7 +119,8 @@
                                     v-bind:src="human0.infoImg" class="img-fluid" width="100px">
                             </div>
                         </div>
-                        <div class="person spouse" v-if="human0.spouse!=false" v-bind:class="{dropdown:human0.SPinfo}">
+                        <div class="person spouse" v-if="human0.spouse!=false"
+                            v-bind:class="[{dropdown:human0.SPinfo}, {SonLaw:human0.SonLaw }]">
                             <span data-bs-toggle="dropdown" v-bind:id="human0.spouse">
                                 {{human0.spouse}}
                             </span>
@@ -140,7 +141,7 @@
                                     </div>
                                 </div>
                                 <div class="person spouse" v-if="human00.spouse!=false"
-                                    v-bind:class="{dropdown:human00.SPinfo}">
+                                    v-bind:class="[{dropdown:human00.SPinfo}, {SonLaw:human00.SonLaw }]">
                                     <span data-bs-toggle="dropdown" v-bind:id="human00.spouse">
                                         {{human00.spouse}}
                                     </span>
@@ -161,7 +162,7 @@
                                             </div>
                                         </div>
                                         <div class="person spouse" v-if="human1.spouse!=false"
-                                            v-bind:class="{dropdown:human1.SPinfo}">
+                                            v-bind:class="[{dropdown:human1.SPinfo}, {SonLaw:human1.SonLaw }]">
                                             <span data-bs-toggle="dropdown" v-bind:id="human1.spouse">
                                                 {{human1.spouse}}
                                             </span>
@@ -181,7 +182,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="person spouse" v-if="human2.spouse!=false"
-                                                    v-bind:class="{dropdown:human2.SPinfo}">
+                                                    v-bind:class="[{dropdown:human2.SPinfo}, {SonLaw:human2.SonLaw }]">
                                                     <span data-bs-toggle="dropdown" v-bind:id="human2.spouse">
                                                         {{human2.spouse}}
                                                     </span>
@@ -206,7 +207,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="person spouse" v-if="human3.spouse!=false"
-                                                            v-bind:class="{dropdown:human3.SPinfo}">
+                                                            v-bind:class="[{dropdown:human3.SPinfo}, {SonLaw:human3.SonLaw }]">
                                                             <span data-bs-toggle="dropdown" v-bind:id="human3.spouse">
                                                                 {{human3.spouse}}
                                                             </span>
@@ -234,7 +235,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="person spouse" v-if="human4.spouse!=false"
-                                                                    v-bind:class="{dropdown:human4.SPinfo}">
+                                                                    v-bind:class="[{dropdown:human4.SPinfo}, {SonLaw:human4.SonLaw }]">
                                                                     <span data-bs-toggle="dropdown"
                                                                         v-bind:id="human4.spouse">
                                                                         {{human4.spouse}}
@@ -265,7 +266,7 @@
                                                                         </div>
                                                                         <div class="person spouse"
                                                                             v-if="human5.spouse!=false"
-                                                                            v-bind:class="{dropdown:human5.SPinfo}">
+                                                                            v-bind:class="[{dropdown:human5.SPinfo}, {SonLaw:human5.SonLaw }]">
                                                                             <span data-bs-toggle="dropdown"
                                                                                 v-bind:id="human5.spouse">
                                                                                 {{human5.spouse}}
@@ -294,7 +295,7 @@
                                                                                 </div>
                                                                                 <div class="person spouse"
                                                                                     v-if="human6.spouse!=false"
-                                                                                    v-bind:class="{dropdown:human6.SPinfo}">
+                                                                                    v-bind:class="[{dropdown:human6.SPinfo}, {SonLaw:human6.SonLaw }]">
                                                                                     <span data-bs-toggle="dropdown"
                                                                                         v-bind:id="human6.spouse">
                                                                                         {{human6.spouse}}
@@ -326,7 +327,7 @@
                                                                                         </div>
                                                                                         <div class="person spouse"
                                                                                             v-if="human7.spouse!=false"
-                                                                                            v-bind:class="{dropdown:human7.SPinfo}">
+                                                                                            v-bind:class="[{dropdown:human7.SPinfo}, {SonLaw:human7.SonLaw }]">
                                                                                             <span
                                                                                                 data-bs-toggle="dropdown"
                                                                                                 v-bind:id="human7.spouse">
@@ -377,11 +378,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="py-2 text-center">&copy; 2023&nbsp;KUO,YA-YUN&nbsp;版權所有</div>
+                    <div class="py-2 text-center">&copy; 2024&nbsp;Kuo,Ya-Yun&nbsp;版權所有</div>
                     <div class="py-2">
                         網站作者：(郭添信的直系)七世的郭雅云。
                         <br>
-                        資料來源：(郭添信的旁系)五世的郭振元主編與六世的郭光世助邊、郭春廷建檔所提供的《郭姓惟琶渡臺始祖世襲譜》；
+                        資料來源：(郭添麟的直系)五世的郭振元主編與六世的郭光世助邊、郭春廷建檔所提供的《郭姓惟琶渡臺始祖世襲譜》；
                         戶口名簿等資料
                         <br>
 
