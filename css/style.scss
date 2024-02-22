@@ -23,9 +23,13 @@ html {
     width: 100%;
     overflow: hidden;
     height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100vh;
 
     &:after {
-        content: "Loading...";
+        // content: "Loading...";
+        content: url(../img/loading.gif);
         position: absolute;
         background: #fff;
         width: 100%;
@@ -49,6 +53,73 @@ body.finish {
     }
 }
 
+
+/* 漢堡 */
+.navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2;
+    border-radius: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all .3s;
+
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+
+    & .menu-burger {
+        transition: all .3s;
+        background-color: $primary;
+        position: relative;
+        width: 25px;
+        height: 2px;
+    }
+
+    & .menu-burger:before,
+    & .menu-burger:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        transition: all .3s;
+        background-color: $primary;
+        left: 12px;
+    }
+
+    & .menu-burger:before {
+        transform: translate(-50%, -8px);
+    }
+
+    & .menu-burger:after {
+        transform: translate(-50%, 8px);
+    }
+
+    &[aria-expanded="true"] .menu-burger {
+        transform: translateX(-12px);
+        background-color: transparent;
+    }
+
+    &[aria-expanded="true"] .menu-burger:before {
+        transform: rotate(45deg);
+    }
+
+    &[aria-expanded="true"] .menu-burger:after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
 .sidebar {
     position: fixed;
     left: 0;
@@ -56,6 +127,7 @@ body.finish {
     height: 100%;
     width: 280px;
     z-index: 100;
+    display: flex;
 
     a#tree {
         cursor: pointer;
@@ -185,13 +257,24 @@ a {
     }
 }
 
-@media (max-width: 992px) {
-
-    .sidebar {
-        overflow: auto;
-        overflow-x: hidden;
-        width: 60px;
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
     }
+
+    #navbarNav.collapse {
+        display: flex;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        height: 100vh;
+        width: 100vw;
+        z-index: 100;
+        padding-bottom: 20px;
+    }
+
 
     .btn-circle {
         width: 35x;
@@ -201,14 +284,14 @@ a {
     }
 
     .zoom {
-        left: 60px;
+        // left: 60px;
+        display: none;
     }
 
     .tree-outter,
     .outter {
         margin-left: 60px !important;
         width: calc(100vw - 60px) !important;
-        // overflow: auto!important;
 
     }
 

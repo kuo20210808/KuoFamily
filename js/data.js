@@ -191,19 +191,19 @@ $(function () {
     window.five1_4.data = { name: "郭振枝", info: 0, spouse: 0, children: [sixAdd4_2.data, sixAdd4_1.data], infoData: 0 };
     window.five1_5 = window.five1_5 || {};
     window.five1_5.data = {
-        name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5>【六世】
+        name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5>【五世】
         </h5><ul>
     <li>生於1925年</li>
     <li>卒於2018年</li>
     <li>1937年畢業後就讀高雄州立屏東農校</li>
-    <li>1951年，郭振純幫忙葉廷珪參選臺南市長時認識 <a href="https://zh.wikipedia.org/wiki/%E4%B8%81%E7%AA%88%E7%AA%95">丁窈窕</a>，  
+    <li>1951年幫忙葉廷珪參選臺南市長時認識 <a target="_blank" style="font-size:18px;font-weight:700;" href="https://zh.wikipedia.org/wiki/%E4%B8%81%E7%AA%88%E7%AA%95">丁窈窕</a>，  
     </br>兩人因志趣相投相戀。</br>
     但郭男考慮參與社會運動會彼此拖累，而解除婚約
     </li>
-    <li>1953年5月20日由於不肯指認葉廷珪是廖文毅的同夥</br>而遭到逮捕刑求。 </li>
+    <li>1953年5月20日由於不肯指認葉廷珪是廖文毅的同夥</br>而遭逮捕刑求。 </li>
     <li>1954年11月18日，被以「參加叛亂之集會」罪名判處無期徒刑，  </br>褫奪公權終身，移往新店安坑軍人監獄、綠島新生訓</li>
-    <li>1975年，由於蔣介石過世，郭振純獲得減刑特赦，得以開釋出獄。  </br>到他7月14日離開為止，他在牢獄中度過22年54日</li>
-    <li>2004年起，他開始不停地參與白色恐怖口述史工作</li>
+    <li>1975年由於蔣介石過世，郭振純獲得減刑特赦，得以開釋出獄。  </br>到他7月14日離開為止，他在牢獄中度過22年54日</li>
+    <li>2004年起開始不停參與白色恐怖口述史工作</li>
     <li>2008年將自身的故事寫成小說《耕甘藷園的人》出版</li>
     </ul>` };
 

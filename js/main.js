@@ -9,16 +9,22 @@ $(function () {
 
 
     var offL = $(window).width() / 2
-
     function ScrollCenter() {
         var centerL = $("#成器公").offset().left
         $("html,body").animate({
             scrollLeft: Math.abs(centerL - offL),
             scrollTop: 0
         })
-
     }
-    ScrollCenter()
+
+    // ScrollCenter()
+
+
+    //手機板選單 點選項自動關選單
+    // $("#navbarNav .link-dark").click(function () {
+    //     $('#navbarNav').removeClass('show');
+    //     $('.navbar-toggler').attr('aria-expanded', 'false');
+    // })
 
 
     //沒配偶的加nospouse微調樣式
@@ -120,16 +126,29 @@ $(function () {
 
     //load() html
     $('.sidebar .nav-link').click(function () {
+
         $("#tree-outter").addClass('d-none')
         $('#zoomIn,#zoomOut,#zoomInt,#grandPa').addClass('d-none')
         $("#wrapper").removeClass('d-none')
         $('.sidebar .nav-link').removeClass('active')
         $(this).addClass('active')
         $("#wrapper").load($(this).attr('id') + '.html')
+
+        //手機板選單 點選項自動關選單
+        $('#navbarNav').removeClass('show');
+        $('.navbar-toggler').attr('aria-expanded', 'false');
+        $("html,body").animate({
+            scrollLeft: 10000,
+            scrollTop: 0
+        })
+
     });
 
     $('.sidebar h5 .link-dark').click(function () {
         $('.sidebar .nav-link').removeClass('active')
+        //手機板選單 點選項自動關選單
+        $('#navbarNav').removeClass('show');
+        $('.navbar-toggler').attr('aria-expanded', 'false');
 
     })
     $("#tree").click(function () {

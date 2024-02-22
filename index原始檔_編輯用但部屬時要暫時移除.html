@@ -9,32 +9,17 @@
     <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./font/bootstrap-icons.css">
-    <style>
-        .loading {
-            position: fixed;
-            width: 100%;
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        .loading :after {
-            content: "Loading...";
-            position: absolute;
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 1;
-            z-index: 1001;
-        }
-    </style>
 </head>
 
 <body class="loading">
     <main>
-        <div class="sidebar d-flex flex-column flex-shrink-0 p-xl-3 bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <div class="menu-burger"></div>
+        </button>
+        <div id="navbarNav" class="sidebar collapse  flex-column flex-shrink-0 p-xl-3 bg-light">
+            <!-- 手機版 漢堡選單btn -->
+
             <h5 class="fs-4 text-center"> <a id="tree" class="link-dark">
                     郭家家譜</a></h5>
             <hr>
@@ -67,9 +52,7 @@
                 <a data-href="#郭振良" class="btn btn-primary btn-circle link-light mx-1">良</a>
                 <a data-href="#郭振吉" class="btn btn-primary btn-circle link-light mx-1">吉</a>
                 <a data-href="#郭振壽" class="btn btn-primary btn-circle link-light mx-1">壽</a>
-
             </div>
-
 
 
 

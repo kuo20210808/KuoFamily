@@ -9676,9 +9676,12 @@ html {
   width: 100%;
   overflow: hidden;
   height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100vh;
 }
 .loading:after {
-  content: "Loading...";
+  content: url(../img/loading.gif);
   position: absolute;
   background: #fff;
   width: 100%;
@@ -9699,6 +9702,61 @@ body.finish::after {
   display: none;
 }
 
+/* 漢堡 */
+.navbar-toggler {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: all 0.3s;
+}
+.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler .menu-burger {
+  transition: all 0.3s;
+  background-color: #878765;
+  position: relative;
+  width: 25px;
+  height: 2px;
+}
+.navbar-toggler .menu-burger:before, .navbar-toggler .menu-burger:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  transition: all 0.3s;
+  background-color: #878765;
+  left: 12px;
+}
+.navbar-toggler .menu-burger:before {
+  transform: translate(-50%, -8px);
+}
+.navbar-toggler .menu-burger:after {
+  transform: translate(-50%, 8px);
+}
+.navbar-toggler[aria-expanded=true] .menu-burger {
+  transform: translateX(-12px);
+  background-color: transparent;
+}
+.navbar-toggler[aria-expanded=true] .menu-burger:before {
+  transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded=true] .menu-burger:after {
+  transform: rotate(-45deg);
+}
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -9706,6 +9764,7 @@ body.finish::after {
   height: 100%;
   width: 280px;
   z-index: 100;
+  display: flex;
 }
 .sidebar a#tree {
   cursor: pointer;
@@ -9815,11 +9874,20 @@ a {
   color: #878765;
 }
 
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+  #navbarNav.collapse {
+    display: flex;
+  }
+}
 @media (max-width: 992px) {
   .sidebar {
-    overflow: auto;
-    overflow-x: hidden;
-    width: 60px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    padding-bottom: 20px;
   }
   .btn-circle {
     width: 35x;
@@ -9828,7 +9896,7 @@ a {
     margin-top: 6px;
   }
   .zoom {
-    left: 60px;
+    display: none;
   }
   .tree-outter,
   .outter {
