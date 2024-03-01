@@ -20,11 +20,10 @@ $(function () {
     // ScrollCenter()
 
 
-    //手機板選單 點選項自動關選單
-    // $("#navbarNav .link-dark").click(function () {
-    //     $('#navbarNav').removeClass('show');
-    //     $('.navbar-toggler').attr('aria-expanded', 'false');
-    // })
+    $('.navbar-toggler').click(function () {
+        $('body').toggleClass('overflow-hidden')
+
+    })
 
 
     //沒配偶的加nospouse微調樣式
@@ -146,6 +145,7 @@ $(function () {
 
     $('.sidebar h5 .link-dark').click(function () {
         $('.sidebar .nav-link').removeClass('active')
+
         //手機板選單 點選項自動關選單
         $('#navbarNav').removeClass('show');
         $('.navbar-toggler').attr('aria-expanded', 'false');
@@ -158,6 +158,8 @@ $(function () {
         ScrollCenter()
 
     });
+
+
 
 
 

@@ -38,7 +38,7 @@ html {
         top: 0;
         left: 0;
         opacity: 1;
-        z-index: 100;
+        z-index: 500;
     }
 
 }
@@ -611,10 +611,6 @@ div.tree {
 }
 
 @media (max-width: 992px) {
-    main {
-        width: 100vw;
-        overflow: auto;
-    }
 
     .sidebar {
         height: 100vh;
@@ -645,7 +641,8 @@ div.tree {
     }
 
     //郭姓惟琶渡臺始祖世襲圖 標題
-    .tree-outter .verticle-text {
+    .tree-outter .verticle-text,
+    #grandPa {
         display: none;
     }
 
