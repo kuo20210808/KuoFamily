@@ -1,5 +1,12 @@
 
 $(function () {
+
+
+
+
+
+
+
     // setTimeout(function () {
     //     $('body').removeClass('loading')
     // }, 2000) /*載入完成改用vue的mounted寫在data.js */
