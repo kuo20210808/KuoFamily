@@ -191,7 +191,7 @@ $(function () {
     window.five1_4.data = { name: "郭振枝", info: 0, spouse: 0, children: [sixAdd4_2.data, sixAdd4_1.data], infoData: 0 };
     window.five1_5 = window.five1_5 || {};
     window.five1_5.data = {
-        name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5>【五世】
+        name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5><img width="70px" src="./img/郭振純.png" alt="郭振純" class="img-fluid">【五世】
         </h5><ul>
     <li>生於1925年</li>
     <li>卒於2018年</li>
@@ -440,7 +440,7 @@ $(function () {
     };
 
 
-    var app = new Vue({
+    const vm = new Vue({
         el: '#family',
         data: {
             零世: [
@@ -449,17 +449,30 @@ $(function () {
                 }
             ],//零世 結束 
 
-
-
-
         },//data結束 
 
-
+        created: function () {
+            console.log("new Vue.created生命週期-data資料已取得，但el還未被建立")/* data資料已取得，但el還未被建立 */
+        },
+        beforeMount: function () {
+            console.log("new Vue.beforeMount生命週期-還沒抓到el資料")/* 還沒抓到el資料 */
+        },
+        mounted: function () { //已掛上Dom 並取得el資料
+            // setTimeout(function () {
+            //     $('body').removeClass('loading')
+            // }, 2000)
+            this.load()
+        },
+        methods: {
+            load: function () {
+                $('body').removeClass('loading')
+            }
+        }
 
     });
 
 
-
+    ;
 
 
 });

@@ -9,9 +9,29 @@
     <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./font/bootstrap-icons.css">
+
+    <!-- jquery.min.js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.fancybox.min.js"></script>
+    <script src="./js/jquery.visible.min.js"></script>
+
+    <!-- Vue.js v2.6.11 -->
+    <script src="./js/Vue.min.js"></script>
+    <script src="./js/data.js"></script>
+
+
+    <script type="text/javascript" src="./js/full-screen-helper.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
 </head>
 
 <body class="loading">
+
+
+
+
     <main>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -379,20 +399,7 @@
                     </div>
                 </div>
             </div>
-            <!-- jquery.min.js -->
-            <script src="js/jquery.min.js"></script>
-            <script src="./js/bootstrap.bundle.min.js"></script>
-            <script src="./js/jquery.fancybox.min.js"></script>
-            <script src="./js/jquery.visible.min.js"></script>
 
-            <!-- Vue.js v2.6.11 -->
-            <script src="./js/Vue.min.js"></script>
-            <script src="./js/data.js"></script>
-
-
-            <script type="text/javascript" src="./js/full-screen-helper.min.js"></script>
-
-            <script src="./js/main.js"></script>
 
 
             <script>
@@ -449,11 +456,8 @@
                     }
                     dragScroll()
                     //滑鼠碰到姓名或資訊時不要有拖曳視窗的功能
-                    $('.person').mousedown(function (e) {
+                    $('.person,.modal').mousedown(function (e) {
                         e.stopPropagation()
-                    })
-                    $('.modal.show').mousedown(function (e) {
-                        $(document).off("dragScroll")
                     })
 
 
@@ -463,5 +467,7 @@
             </script>
 
 </body>
+
+
 
 </html>

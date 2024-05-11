@@ -1,11 +1,8 @@
 
 $(function () {
-
-
-    setTimeout(function () {
-        $('body').removeClass('loading')
-        ScrollCenter()
-    }, 2000)
+    // setTimeout(function () {
+    //     $('body').removeClass('loading')
+    // }, 2000) /*載入完成改用vue的mounted寫在data.js */
 
 
     var offL = $(window).width() / 2
@@ -16,13 +13,12 @@ $(function () {
             scrollTop: 0
         })
     }
-
-    // ScrollCenter()
+    ScrollCenter()
 
 
     $('.navbar-toggler').click(function () {
-        $('body').toggleClass('overflow-hidden')
-
+        zoom = 1;
+        $('#family').css('zoom', zoom);
     })
 
 
