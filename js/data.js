@@ -149,8 +149,8 @@ $(function () {
     <li>生於1973年3月15</li></ul>` };
     window.six8_1 = window.six8_1 || {};
     window.six8_1.data = {
-        name: "郭承祥", info: 1, spouse: "王惠禎", SPinfo: 1, SPinfoData: "生於1969年7月13日", children: [seven8_2.data, seven8_1.data], infoData: `<h5>【六世】</h5><ul>
-    <li>生於1966年2月22</li></ul>` };
+        name: "郭力成", info: 1, spouse: "王惠禎", SPinfo: 1, SPinfoData: "生於1969年7月13日", children: [seven8_2.data, seven8_1.data], infoData: `<h5>【六世】</h5><ul>
+    <li>生於1966年2月22</li><li>原名:郭承祥</li></ul>` };
     window.six8_2 = window.six8_2 || {};
     window.six8_2.data = {
         name: "郭靜恩", info: 1, spouse: 0, children: 0, infoData: `<h5>【六世】</h5><ul>
