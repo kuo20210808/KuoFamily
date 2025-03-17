@@ -150,7 +150,9 @@ $(function () {
     window.six8_1 = window.six8_1 || {};
     window.six8_1.data = {
         name: "郭力成", info: 1, spouse: "王惠禎", SPinfo: 1, SPinfoData: "生於1969年7月13日", children: [seven8_2.data, seven8_1.data], infoData: `<h5>【六世】</h5><ul>
-    <li>生於1966年2月22</li><li>原名:郭承祥</li></ul>` };
+    <li>生於1966年2月22</li>
+    <li>原名:郭承祥</li>
+    </ul>` };
     window.six8_2 = window.six8_2 || {};
     window.six8_2.data = {
         name: "郭靜恩", info: 1, spouse: 0, children: 0, infoData: `<h5>【六世】</h5><ul>
@@ -306,7 +308,7 @@ $(function () {
                 <li>生於1903年(民國前9年)2月1日
                 <br>卒於1960年(民國49年)7月9日(農曆六月十六日)
                 </li>
-                <li>元配林氏。 再娶郭張春</li>
+                <li>元配郭林悅治。 再娶郭張春</li>
                 <li>玉記行</h6></li>
             </ul>                  
             <br>
@@ -314,7 +316,7 @@ $(function () {
             <div><img src="./img/郭玉記名片1930_01_03.jpg" alt="" class="img-fluid"></div>
             `,
         SPinfo: 1, SPinfoData: `<img width="70px" src="./img/郭張春.png" alt="郭張春" class="img-fluid">
-        <br>生於1906年(民國前6年)12月5日<br>卒於?年正月二十七日 
+        <br>生於1906年(民國前6年)12月5日<br>卒於1983年(民國72年)11月13日 
         `,
     };
     window.four1_4 = window.four1_4 || {};
