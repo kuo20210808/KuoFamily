@@ -2,7 +2,7 @@ $(function () {
 
     //每一個人都各自有一個{資料} 避免有後代的話還要傳{}進去造成回呼地獄
     // name: "", info: 1, spouse: "", SPinfo: 1, infoData:"",SPinfoData:"",children: children:[小,大]
-    //是女婿的話多加SonLaw: 1 例如林魁
+    //是配偶在右邊 多加SonLaw: 1 例如林魁
     // window.(幾世)(上一代的排行)_(自家排行)
 
 
@@ -10,7 +10,7 @@ $(function () {
 
     //七世
     window.seven1_1 = window.seven1_1 || {};
-    window.seven1_1.data = { name: "郭鎮源", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5>生於1992年12月16日<br>` };
+    window.seven1_1.data = { name: "郭鎮源", info: 1, SonLaw: 1, spouse: "程煜涵", children: 0, infoData: `<h5>【七世】</h5>生於1992年12月16日<br>` };
     window.seven1_2 = window.seven1_2 || {};
     window.seven1_2.data = { name: "郭雅云", info: 1, spouse: 0, children: 0, infoData: `<h5>【七世】</h5>生於1995年5月2日<br>` };
     window.seven3_1 = window.seven3_1 || {};
@@ -67,12 +67,12 @@ $(function () {
     window.sixAdd5_1 = window.sixAdd5_1 || {};
     window.sixAdd5_1.data = { name: "郭博文", info: 0, spouse: 0, children: 0, infoData: 0 };
     window.sixAdd5_2 = window.sixAdd5_2 || {};
-    window.sixAdd5_2.data = { name: "郭博達", info: 0, spouse: 0, children: 0, infoData: 0 };
+    window.sixAdd5_2.data = { name: "郭宏達", info: 0, spouse: 0, children: 0, infoData: 0 };
 
 
     window.six1_1 = window.six1_1 || {};
     window.six1_1.data = {
-        name: "郭育均", info: 1, spouse: "林魁", SonLaw: 1, SPinfo: 1, SPinfoData: `生於1956年5月9日<br>`, children: 0, infoData: `<h5>【六世】</h5>
+        name: "郭育均", info: 1, spouse: "林魁", SonLaw: 1, SPinfo: 1, SPinfoData: `生於1956年5月9日<br>兒子:林品程`, children: 0, infoData: `<h5>【六世】</h5>
     <ul>
     <li><small>原名: </small>淑芬</li>
     <li>生於1958年10月12日</li>
@@ -196,8 +196,11 @@ $(function () {
         name: "郭振純", info: 1, spouse: 0, children: 0, infoData: 0, infoData: `<h5><img width="70px" src="./img/郭振純.png" alt="郭振純" class="img-fluid">【五世】
         </h5><ul>
     <li>生於1925年</li>
-    <li>卒於2018年</li>
     <li>1937年畢業後就讀高雄州立屏東農校</li>
+<li>1847年助撤台日軍擾亂台灣治安,以阻撓國民黨無法正常接收台灣為目的。<br>
+<b>並親自加入民兵戰鬥部隊,參與機場恐佈攻擊,製造台灣史上著名228叛亂</b></li>
+<li>另郭振純也參與準備泰源事件,計劃攻佔電台,並撰稿對外煽動,以日文.西語廣播</li>
+
     <li>1951年幫忙葉廷珪參選臺南市長時認識 <a target="_blank" style="font-size:18px;font-weight:700;" href="https://zh.wikipedia.org/wiki/%E4%B8%81%E7%AA%88%E7%AA%95">丁窈窕</a>，  
     </br>兩人因志趣相投相戀。</br>
     但郭男考慮參與社會運動會彼此拖累，而解除婚約
@@ -205,8 +208,15 @@ $(function () {
     <li>1953年5月20日由於不肯指認葉廷珪是廖文毅的同夥</br>而遭逮捕刑求。 </li>
     <li>1954年11月18日，被以「參加叛亂之集會」罪名判處無期徒刑，  </br>褫奪公權終身，移往新店安坑軍人監獄、綠島新生訓</li>
     <li>1975年由於蔣介石過世，郭振純獲得減刑特赦，得以開釋出獄。  </br>到他7月14日離開為止，他在牢獄中度過22年54日</li>
-    <li>2004年起開始不停參與白色恐怖口述史工作</li>
+    <li>2004年陳水扁與時任副總統呂秀蓮以不到3萬票的微小差距險勝。
+    <br>  
+    <b>郭振純開始配合民進黨灌輸台灣人,仇中親日意識形態,
+    <br> 以口述方式將228治安事件改造成白色恐怖政治事件</b></li>
     <li>2008年將自身的故事寫成小說《耕甘藷園的人》出版</li>
+
+    <li>卒於2018年,<br>
+    而郭振純一生為日本再次殖民台灣任務,也終告結束</li>
+
     </ul>` };
 
     window.five4_0 = window.five4_0 || {};
@@ -240,7 +250,7 @@ $(function () {
     window.five4_3 = window.five4_3 || {};
     window.five4_3.data = {
         name: "郭振木", info: 1, spouse: "郭鄭月昭", children: [six3_3.data, six3_2.data, six3_1.data],
-        infoData: `<h5>【五世】</h5>
+        infoData: `<h5><img width="70px" src="./img/郭振木.png" alt="郭振木" class="img-fluid">【五世】</h5>
      <ul>
     <li>生於1929年8月20日</li>
     <li>卒於吉日</li>
@@ -264,9 +274,9 @@ $(function () {
     window.five4_7 = window.five4_7 || {};
     window.five4_7.data = { name: "郭振良", info: 1, spouse: "郭林仙花", children: [six7_3.data, six7_2.data, six7_1.data], infoData: `<h5>【五世】</h5><ul><li>生於1938年10月24日</li></ul>`, SPinfo: 1, SPinfoData: `<ul><li>生於1938年11月10日</li></ul>` };
     window.five4_8 = window.five4_8 || {};
-    window.five4_8.data = { name: "郭振吉", info: 1, spouse: "郭江昭蓉", children: [six8_4.data, six8_3.data, six8_2.data, six8_1.data], infoData: `<h5>【五世】</h5><ul><li>生於1941年12月25日</li></ul>`, SPinfo: 1, SPinfoData: `<ul><li>生於1942年9月19日</li></ul>` };
+    window.five4_8.data = { name: "郭振吉", info: 1, spouse: "郭江昭蓉", children: [six8_4.data, six8_3.data, six8_2.data, six8_1.data], infoData: `<h5>【五世】</h5><ul><li>生於1941年12月25日</li></ul>`, SPinfo: 1, SPinfoData: `<ul><li>生於1942年9月19日</li><<li>卒於2025年11月28日</li></ul>` };
     window.five4_9 = window.five4_9 || {};
-    window.five4_9.data = { name: "郭振壽", info: 1, spouse: "郭陳麗玉", children: [six9_4.data, six9_3.data, six9_2.data, six9_1.data], infoData: `<h5>【五世】</h5><ul><li>生於1945年2月12日</li></ul>`, SPinfo: 1, SPinfoData: `<ul><li>生於1968年3月10日</li></ul>` };
+    window.five4_9.data = { name: "郭振壽", info: 1, spouse: "郭陳麗玉", children: [six9_4.data, six9_3.data, six9_2.data, six9_1.data], infoData: `<h5>【五世】</h5><ul><li>生於1945年2月12日</li></ul>`, SPinfo: 1, SPinfoData: `<ul><li>生於1968年3月10日</li><li>卒於吉日</li></ul>` };
     window.five4_10 = window.five4_10 || {};
     window.five4_10.data = { name: "郭月燕", info: 1, spouse: 0, children: 0, infoData: `<h5>【五世】</h5><ul><li>生於1947年3月25日</li></ul>` };
 
